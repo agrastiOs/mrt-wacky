@@ -1,0 +1,139 @@
+import asm65816
+
+//Damage values have a max of 65535.
+define RockinA_Damage = 80
+define RockinB_Damage = 180
+define RockinG_Damage = 320
+define RockinO_Damage = 640
+
+define FireA_Damage = 80
+define FireB_Damage = 160
+define FireG_Damage = 240
+define FireO_Damage = 320
+
+define FreezeA_Damage = 180
+define FreezeB_Damage = 360
+define FreezeG_Damage = 540
+define FreezeO_Damage = 720
+define Freeze_Solidify_Chance = 25		//Percent chance out of 100
+
+define ThunderA_Damage = 120
+define ThunderB_Damage = 120
+define ThunderG_Damage = 200
+define ThunderO_Damage = 200
+
+define ThunderA_Hits = 1
+define ThunderB_Hits = 2
+define ThunderG_Hits = 3
+define ThunderO_Hits = 4
+
+//This number controls which of the two Thunder animations are used.
+//If the base damage of one of the ranks of Thunder is the same as this number,
+//it will use the animation normally used with Thunder alpha and beta.
+define Thunder_Animation = 120
+
+
+define StarstormA_Damage = 360
+define StarstormO_Damage = 720
+
+
+//Lifeup restoration.  Max of 65535.
+define LifeupA_Power = 75
+define LifeupB_Power = 225
+define LifeupG_Power = 10000
+define LifeupO_Power = 300
+
+//Bottle Rocket damage is base damage per hit
+//Same damage is used for all types of Bottle Rockets
+define BottleRocket_Damage = 120
+define BottleRocket_Hits = 1
+define BigBottleRocket_Hits = 5
+define MultiBottleRocket_Hits = 20
+
+
+//Bomb splash damage is half of base damage
+define Bomb_Damage = 90
+define SuperBomb_Damage = 270
+
+//The Handbag Strap and Mummy Wrap does damage equal to (base damage) - (target's defense)
+define HandbagStrap_Damage = 100
+define MummyWrap_Damage = 400
+
+//The Yogurt Dispenser and the Snake do damage between 1 and X
+define YogurtDispenser_Damage = 4
+define Snake_Damage = 4
+
+define Dragonite_Damage = 800
+
+define Insecticide_Damage = 100
+define Xterminator_Damage = 200
+define RustPromoter_Damage = 200
+define RustPromoterDX_Damage = 400
+
+define Fireball_Damage = 350
+
+
+
+
+
+
+//DON'T EDIT ANYTHING BELOW
+
+//Rom Addresses
+
+ROM [0xC29558] = LDA_i (RockinA_Damage)
+ROM [0xC29561] = LDA_i (RockinB_Damage)
+ROM [0xC2956A] = LDA_i (RockinG_Damage)
+ROM [0xC29573] = LDA_i (RockinO_Damage)
+
+ROM [0xC295AD] = LDA_i (FireA_Damage)
+ROM [0xC295B6] = LDA_i (FireB_Damage)
+ROM [0xC295BF] = LDA_i (FireG_Damage)
+ROM [0xC295C8] = LDA_i (FireO_Damage)
+
+ROM [0xC2961E] = CMP_i (Freeze_Solidify_Chance)
+ROM [0xC29649] = LDA_i (FreezeA_Damage)
+ROM [0xC29652] = LDA_i (FreezeB_Damage)
+ROM [0xC2965B] = LDA_i (FreezeG_Damage)
+ROM [0xC29664] = LDA_i (FreezeO_Damage)
+
+ROM [0xC29876] = LDA_i (ThunderA_Damage)
+ROM [0xC29882] = LDA_i (ThunderB_Damage)
+ROM [0xC2988E] = LDA_i (ThunderG_Damage)
+ROM [0xC2989A] = LDA_i (ThunderO_Damage)
+ROM [0xC29873] = LDX_i (ThunderA_Hits)
+ROM [0xC2987F] = LDX_i (ThunderB_Hits)
+ROM [0xC2988B] = LDX_i (ThunderG_Hits)
+ROM [0xC29897] = LDX_i (ThunderO_Hits)
+ROM [0xC29773] = CMP_i (Thunder_Animation)
+
+ROM [0xC29AA8] = LDA_i (StarstormA_Damage)
+ROM [0xC29AB1] = LDA_i (StarstormO_Damage)
+
+ROM [0xC29AC8] = LDA_i (LifeupA_Power)
+ROM [0xC29AD1] = LDA_i (LifeupB_Power)
+ROM [0xC29ADA] = LDA_i (LifeupG_Power)
+ROM [0xC29AE3] = LDA_i (LifeupO_Power)
+
+ROM [0xC2A5AF] = LDY_i (BottleRocket_Damage)
+ROM [0xC2A5D3] = LDA_i (BottleRocket_Hits)
+ROM [0xC2A5DC] = LDA_i (BigBottleRocket_Hits)
+ROM [0xC2A5E5] = LDA_i (MultiBottleRocket_Hits)
+
+ROM [0xC2A81A] = LDA_i (Bomb_Damage)
+ROM [0xC2A823] = LDA_i (SuperBomb_Damage)
+
+ROM [0xC2A52C] = LDA_i (MummyWrap_Damage)
+ROM [0xC2A60A] = LDA_i (HandbagStrap_Damage)
+
+ROM [0xC2A87E] = LDA_i (YogurtDispenser_Damage)
+ROM [0xC2A8B8] = LDA_i (Snake_Damage)
+
+ROM [0xC2A9A4] = LDA_i (Dragonite_Damage)
+
+ROM [0xC2AA0E] = LDA_i (Insecticide_Damage)
+ROM [0xC2AA17] = LDA_i (Xterminator_Damage)
+ROM [0xC2AA6F] = LDA_i (RustPromoter_Damage)
+ROM [0xC2AA78] = LDA_i (RustPromoterDX_Damage)
+
+ROM [0xC29013] = LDA_i (Fireball_Damage)

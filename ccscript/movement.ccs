@@ -1,0 +1,41 @@
+    import ebpp
+
+    command npc_do_mc(tpt,move) "[1F F1 {short tpt} {short move}]"
+
+    // Movement code creation commands
+    command movs_init_alt(speed, style) {
+      mov_jslmov_short(0xC3AAAA, 0x01F6)
+      mov_jslasm(0xC0A685) "[{short speed}]"
+      mov_tablewrite(5, byte style)
+    }
+
+    command movecode_walk(mc_num, speed, destX, destY) {
+      _mc: {
+        movs_init_alt(speed, 2)
+        movs_walker(destX, destY)
+        mov_jslasm(0xC46E46)
+        movs_go
+        mov_halt
+      }
+      mov_link(mc_num, _mc)
+    }
+
+    command movecode_run(mc_num, speed, destX, destY) {
+      _mc: {
+        movs_init(speed, 2)
+        movs_walker(destX, destY)
+        mov_jslasm(0xC46E46)
+        movs_go
+        mov_halt
+      }
+      mov_link(mc_num, _mc)
+    }
+
+    command movecode_appear(mc_num, x, y) {
+      _mc: {
+        mov_setxy(x,y)
+        mov_pause(2)
+        mov_jmlmov(0xC3A2AA)
+      }
+      mov_link(mc_num, _mc)
+    }

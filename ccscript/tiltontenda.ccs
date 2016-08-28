@@ -1,0 +1,59 @@
+import useful
+import asm65816
+import ebpp_std
+import ebpp
+import ebpp_mem
+import charnames
+
+tilton:
+window_open(1)
+"@The energy of the meteor energized you." sound(36)  heal_percent (1, 100) recoverpp_percent (1, 100) next 
+title(1,"Dr. Tilton Tenda")
+"@You want to get to this meteor,/ {get_name(1)}?" next
+"@I thought robots and those weird hackers could beat you,/ but you still got to me..." next
+"@You've always been better at hacking,/ and I hate you for that." next
+"@So I'll not let you get to this meteor for that!" next
+"@Stay away from it!" wait
+battle(480)
+window_open(1)
+"@The last wave of meteor energy struck you a bit." sound(36)  
+heal_percent (1, 75) recoverpp_percent (1, 75) next
+title(1,"Dr. Tilton Tenda")
+"@I'm still not done with you!" next
+"@Attack!" wait
+battle(474)
+window_open(1)
+title(1,"Dr. Tilton Tenda")
+"@You've always been better than me in battle,/ too..." next pause(30)
+"@I'll get my revenge on you!" next
+"@For now,/ goodbye!" next
+"@But wait!" next
+"@How I forgot this contraption?" next
+sound(0x49)
+window_closeall
+pause(120)    
+"[1f 15 6a 00 79 02 01][1f 61][10 78][1f 1f 6a 00 06]"
+AGAINSTTENDA
+music_switching_off
+window_open(1)
+"@Out of my way!" next
+window_closeall
+pause(120)
+window_open(1)
+title(1,"Tom")
+"@Stop!" newline
+"@I will not let you go to this meteor!" wait
+anchor_set
+unset(9255)
+set(1285)
+set(0x520)
+set(11)
+anchor_warp
+eob
+
+sorry:
+title(1,"Insane Hacker")
+"@Sorry, mate!" next
+"@That tenda with a freakin' beard fooled us!" next
+"@We will keep the robos off the bay."
+end

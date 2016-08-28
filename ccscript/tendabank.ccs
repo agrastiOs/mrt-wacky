@@ -1,0 +1,31 @@
+import charnames
+import useful
+
+tendabank:
+"@Hello, {get_name(1)}." linebreak
+"@It's TendaBank!" next
+"@We can record everything about you," next
+"@and transact some money to your credit card!" next
+"@TENDABAAANK IS AWESOME!" next
+"@You can also use your computer to transact some money!" next
+"@You should have{open_wallet} ${stat(7)} on TendaBank." next 
+"@What you want to do?" newline
+menu {
+"Record":{
+fullsave
+"@Recording.|.|.{pause(30)} Finished!" next
+"@Goodbye!" wait
+eob
+}
+"Money":{
+{call(0xC62D30)}
+}
+default "Nothing":{
+"@OK. Then,| goodbye!" wait
+eob
+}
+}
+eob
+
+
+

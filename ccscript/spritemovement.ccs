@@ -1,0 +1,69 @@
+    import ebpp
+
+    command npc_do_mc(tpt,move) "[1F F1 {short tpt} {short move}]"
+
+    // Movement code creation commands
+    command movs_init_alt(speed, style) {
+      mov_jslmov_short(0xC3AAAA, 0x01F6)
+      mov_jslasm(0xC0A685) "[{short speed}]"
+      mov_tablewrite(5, byte style)
+    }
+
+    command movecode_walk(mc_num, speed, destX, destY) {
+      _mc: {
+        movs_init_alt(speed, 2)
+        movs_walker(destX, destY)
+        mov_jslasm(0xC46E46)
+        movs_go
+        mov_halt
+      }
+      mov_link(mc_num, _mc)
+    }
+
+    command movecode_run(mc_num, speed, destX, destY) {
+      _mc: {
+        movs_init(speed, 2)
+        movs_walker(destX, destY)
+        mov_jslasm(0xC46E46)
+        movs_go
+        mov_halt
+      }
+      mov_link(mc_num, _mc)
+    }
+
+    command movecode_appear(mc_num, x, y) {
+      _mc: {
+        mov_setxy(x,y)
+        mov_pause(2)
+        mov_jmlmov(0xC3A2AA)
+      }
+      mov_link(mc_num, _mc)
+    }
+    
+        command movecode_flee(mc_num, x, y) {
+          _mc: {
+            mov_jslmov_short(0xC3AAAA, 0x01F6)
+            mov_tablewrite(4, 0)
+            "[42 BF A4 C0]"
+            "[42 45 6C C4]"
+            mov_tablewrite(2, 0x50)
+            mov_tablewrite(3, 0x50)
+            mov_jslmov_short(0xC3AB8A, 0x01F6)
+            mov_loadtmp(1)
+            "[42 57 A8 C0 32 01]"
+            mov_loadtmp(0)
+            "[42 57 A8 C0 21 00]"
+            mov_loadtmp(4)
+            "[42 5F A6 C0]"
+            "[42 BF A4 C0 06 08]"
+            mov_tablewrite(4, 5)
+            "[42 85 A6 C0 00 02]"
+            mov_tablewrite(5, 2)
+            mov_tablewrite(6, x)
+            mov_tablewrite(7, y)
+            mov_jslmov_short(0xC3AB59, 0x01F6)
+            mov_jslmov_short(0xC3A204, 0x01F6)
+            mov_end
+          }
+          mov_link(mc_num, _mc)
+    }

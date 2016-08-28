@@ -1,0 +1,50 @@
+    command multigoto(num) "[09 {byte num}]"
+    /* Usage:
+     * multigoto(numberOfEntries)
+     * adr32(entry1)
+     * adr32(entry2)
+     * adr32(entry3)
+     * etc
+     */
+
+    command adr32(a) "[{byte[0] a} {byte[1] a} {byte[2] a} 00]"
+
+/* Character names */
+command get_name(number) {
+    arg(number)
+	swap
+	get_name0
+}
+
+command clear_screen {
+newline newline newline newline
+}
+
+get_name_aux:
+multigoto(4)
+adr32(p1name)
+adr32(p2name)
+adr32(p3name)
+adr32(p4name)
+name(0)
+eob
+
+command get_name0 call(get_name_aux)
+
+command first_name {
+    "[19 10 01]"
+	call(get_name_aux)
+}
+
+p1name:
+"Mr. " name(1) eob
+
+p2name:
+name(2) eob
+
+p3name:
+name(3) eob
+
+p4name:
+name(4) eob
+

@@ -1,0 +1,73 @@
+define HOTEL_HEAL = 0xc91582		//Restores HP and PP for party members
+define HOTEL_FULL_HEAL = 0xc915f4	//Restores HP and PP for party members, as well as
+					//reviving and curing status effects
+
+define HotelSleep = flag 0x17f
+//This flag marks that you have spent the night at the hotel, and activates things
+//such as the post-sleep hotel music, the presence of the attendant who reads the
+//the newspaper, and the guy behind the counter giving a different message instead of
+//offering to let you spend the night.  This flag is typically unset as you leave the
+//hotel.
+
+//Command for setting the cost of the hotel
+command hotel_cost(cost) "[1D 15 {short cost}]"
+
+command gen_sprite(sprite, move, style) "[1F 15 {short sprite} {short move} {byte style}]"
+command ifgoto (num, target) "[06 {short num} {long target}]"
+
+command hotel(cost, greetingLabel, noMoneyLabel, refuseLabel, goodMorningLabel, roomWarp, type) {
+  if HotelSleep {
+    goto(goodMorningLabel)
+  } else {
+    hotel_cost(cost)
+    swap
+    call(greetingLabel)
+    newline
+    menu {
+      "Yes": {
+        if hasmoney(0) {
+	  call(GeneralSleep)
+	  if flag 0x7c {
+	    goto (0xc906e6)	 //Calls Zombie Paper event, only used in Threed's hotel
+	  }
+	  music_resume
+	  warp(roomWarp)
+	  call (type)		//Restores your party's HP and PP
+	  eob
+	} else {
+	  goto(noMoneyLabel)
+	}
+      }
+      default "No": {
+        goto(refuseLabel)
+      }
+    }
+  }
+}
+
+GeneralSleep:
+takemoney (0)
+open_wallet
+sound (118)
+"@Have a nice stay." wait
+window_closeall
+pause (1)
+set (HotelSleep)	//Makes the newspaper hotel attendant appear, and changes the music of the hotel to the morning music
+music_effect (3)
+gen_sprite (0x6a, 0x279, 1)
+"[1f 61]"
+ifgoto (0x27a, 0xc68c3f)	//First psychic call from Paula, usually in Onett.  You can comment these out if your hack doesn't need them.
+ifgoto (0x27b, 0xc68cc3)	//Second psychic call from Paula, usually in Twoson
+ifgoto (0x27c, 0xc68d5a)	//Third psychic call from Paula, as Jeff
+ifgoto (0x7c, Nothing)		//Zombie paper event skips the fixing routine
+call (0xc685da)			//Jeff fixing routine
+eob
+
+//This text string should be linked to the exit door of the hotel
+exit:
+music_effect (8)
+unset (HotelSleep)
+eob
+
+Nothing:
+eob

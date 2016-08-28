@@ -1,0 +1,169 @@
+import useful
+import ebpp
+import ebpp_std
+import ebpp_mem
+
+shaving:
+if not flag 517 {
+char_direction(1,1)
+"@Shave?" linebreak
+menu {
+"Yes" : {"@You can't see a thing!" next
+"@Turn on the lights." end}
+"No" : {
+window_closeall
+eob
+}
+}
+}
+else {
+char_direction(1,1)
+"@Shave?" linebreak
+menu {
+"Yes" : {hide_sprite(1412,10)
+pause(100)
+goto(beforet)}
+"No" : {
+window_closeall
+}
+}
+}
+eob
+
+beforet:
+if flag 8264 and flag 517 {
+char_direction(1,1)
+"@Shave?" linebreak
+menu {
+"Yes" : {"@You've shaved already, so you gazed into your good looks." wait
+eob
+}
+"No" : {
+eob
+}
+}
+}
+else{
+goto(t)
+}
+
+t:
+if not flag 0x500 {
+set(8761) set(8762)
+"@Let's start to shave! Wait a minute..." next
+warp(1)
+"[1F E5 FF]"
+title(1,"Evil Mr. Tenda")
+"@Your wicked good looks have opened a rift between the Mirror Universe," next
+"@and your universe." next
+"@I am a replica of you." next
+"@However, now that I am in this world," next
+"@there is no space for you to be here." next
+"@Tenda Soldier, battle him!" next
+title(1,"Tenda Soldier")
+"@NO, you forced me to go here!" next
+title(1,"Evil Mr. Tenda")
+"@Battle this weakling from the real universe, or else..." next
+title(1,"Tenda Soldier")
+"@Or...|else...|you will take my pizza?" next
+title(1,"Evil Mr. Tenda")
+"@Um...|yes, I will do that." next
+"@And I will capture your friend Tenda!" next
+title(1,"Tenda Soldier")
+"@Okay then..." next 
+battle(482)
+hide_sprite(1265,7)
+window_open(1)
+unset(8761)
+set(0x500)
+"@Darn you!" linebreak
+"@Looks like I'll have to kill you myself!" next 
+battle(481)
+set(0x154) set(8264) unset(8762) unset(749) set(6184)
+window_open(1)
+"@Looks like.|.|.you've bested me.." next
+"  for now.|.|." next window_closeall 
+hide_sprite(4,7)
+pause(120)
+window_open(1)
+"@You finished shaving." wait
+warp(1)
+fullsave
+eob
+}
+if flag 0x500 {
+title(1,"Evil Mr. Tenda")
+"@Darn you!" linebreak
+"@Looks like I'll have to kill you myself!" wait
+battle(481)
+set(0x154) set(8264) unset(8762) unset(749) set(6184)
+window_open(1)
+"@Looks like.|.|.you've bested me.." next
+"  for now.|.|." next window_closeall 
+hide_sprite(4,7)
+pause(120)
+window_open(1)
+"@You finished shaving." wait
+warp(1)
+fullsave
+eob
+}
+
+evil:
+if not flag 0x500 {
+title(1,"Evil Mr. Tenda")
+"@Heh! Came back?" next
+battle(482)
+hide_sprite(1265,7)
+window_open(1)
+unset(8761)
+set(0x500)
+"@Darn you!" linebreak
+"@Looks like I'll have to kill you myself!" next 
+battle(481)
+set(0x154) set(8264) unset(8762) unset(749) set(6184)
+window_open(1)
+"@Looks like.|.|.you've bested me.." next
+"  for now.|.|." next window_closeall 
+hide_sprite(4,7)
+pause(120)
+window_open(1)
+"@You finished shaving." wait
+warp(1)
+fullsave
+eob
+}
+if flag 0x500 {
+title(1,"Evil Mr. Tenda")
+"@Darn you!" linebreak
+"@Looks like I'll have to kill you myself!" wait
+battle(481)
+set(0x154) set(8264) unset(8762) unset(749) set(6184)
+window_open(1)
+"@Looks like.|.|.you've bested me.." next
+"  for now.|.|." next window_closeall 
+hide_sprite(4,7)
+pause(120)
+window_open(1)
+"@You finished shaving." wait
+warp(1)
+fullsave
+eob
+}
+
+power:
+"@I... feel something"
+
+cookie:
+help(203)
+"@A cookie that all Tendas love to eat." next
+"@Recovers 30 HP."
+end
+
+setflags:
+if flag 978
+{set (979)}
+if flag 6184{
+unset(4096) eob
+}
+else{eob}

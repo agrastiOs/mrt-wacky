@@ -1,0 +1,59 @@
+import thoughts
+import asm65816
+import charnames
+import ebpp_std
+import ebpp
+import ebpp_mem
+import dimension
+import useful
+
+
+teleportation:
+if flag 9255{
+"@The meteor is still hot." next
+"@|Wait, |what's happening?" wait
+window_closeall
+music(0x5B)
+warp(165)
+music_switching_on
+unset(11)
+fullsave
+goto(tom)
+eob
+}
+else{
+title(1,"Tom")
+"@Wait!" wait
+"{window_closeall}{party_add(5)}{hide_char (5)}[1F F1 BA 00 2F 00][1F 61]{hide_sprite (186,6)}{show_char(5,1)}"
+window_open(1)
+title(1,"Tom")
+"@Hi!" newline
+"@When I was recovering you," next
+"@he was gone." next
+"@I tried to stop him." next
+"@Not only that, someone looking like you," next
+"@pushed me away and ran like insane." next sound(114)
+"@Sorry for leaving you alone." next
+"@Sadly, I lost my box." next
+"@But, I will join you!" next
+"@Let's check that meteor!" next
+"@It's interesting." next
+"{music(123)}{pause(120)}{pause(60)}{AGAINSTTENDA}{window_open(1)}@(Tom joins you.)[03]{window_closeall}"
+set(9255)
+window_open(1)
+"@The meteor is still hot." next
+"@|Wait, |what's happening?" wait
+window_closeall
+hotspot_on(1,1,tom)
+music(0x5B)
+warp(165)
+unset(11)
+fullsave
+goto(tom)
+eob
+}
+
+
+unsetflag:
+unset(11)
+eob

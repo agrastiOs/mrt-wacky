@@ -1,0 +1,91 @@
+command fullsave "[1B 06][19 26 00][1F B0]"
+import asm65816
+import ASMRef
+import actions
+
+define AGAINSTSPINNINGROBO = music(97)
+define AGAINSTTENDA = music(103)
+
+    
+    command inst_pack_loc (target) "[{byte[2] target} {byte[0] target} {byte[1] target}]"
+	
+	command surprise_lines (char) {"[1F 1C {byte char} 01][10 3C][1F 1D {byte char}]"}
+
+    command exclamation (char) {"[1F 1C {byte char} 03][10 3C][1F 1D {byte char}]"}
+
+    command lightbulb (char) {"[1F 1C {byte char} 04][10 3C][1F 1D {byte char}]"}
+
+    command heart (char) {"[1F 1C {byte char} 09][10 3C][1F 1D {byte char}]"}
+
+    command surprise_lines_tpt (tpt) {"[1F 1A {short tpt} 01][10 3C][1F 1B {short tpt}]"}
+
+    command exclamation_tpt (tpt) {"[1F 1A {short tpt} 03][10 3C][1F 1B {short tpt}]"}
+
+    command lightbulb_tpt (tpt) {"[1F 1A {short tpt} 04][10 3C][1F 1B {short tpt}]"}
+
+    command heart_tpt (tpt) {"[1F 1A {short tpt} 09][10 3C][1F 1B {short tpt}]"}
+
+    command help(item_id) {
+            "[01]  <{itemname(item_id)}>" next
+    }
+
+    command adr24(a) "[{byte[0] a} {byte[1] a} {byte[2] a}]"
+
+    command give2(item, failLabel) {
+    "[1d 03 ff]"
+    "[1b 02]" adr24(failLabel) "[00]"
+    "[1d 0e 00]" item
+    call(0xc7dccf)
+    "[13]"
+    }
+	
+	UserCode:
+"[1F 41 08][1B 02 {e(useful.PlayerSound)}]{sound(25)}" eob
+
+PlayerSound:
+"{sound(24)}" eob
+	
+
+
+define Lifeup_A_Power = 100
+define Lifeup_B_Power = 300
+define Lifeup_G_Power = 10000
+define Lifeup_O_Power = 400
+
+Lifeup_General: {
+	REP	(0x31)
+	TAX
+	JSL	(Mult_A_x_Rand_075_125)
+	TAX
+	LDA_a	(0xA972)
+	JSL	(Recover_HP)
+	RTL
+}
+
+Lifeup_Alpha: {
+	REP	(0x31)
+	LDA_i	(Lifeup_A_Power)
+	JSL	(Lifeup_General)
+	RTL
+}
+
+Lifeup_Beta: {
+	REP	(0x31)
+	LDA_i	(Lifeup_B_Power)
+	JSL	(Lifeup_General)
+	RTL
+}
+
+Lifeup_Gamma: {
+	REP	(0x31)
+	LDA_i	(Lifeup_G_Power)
+	JSL	(Lifeup_General)
+	RTL
+}
+
+Lifeup_Omega: {
+	REP	(0x31)
+	LDA_i	(Lifeup_O_Power)
+	JSL	(Lifeup_General)
+	RTL
+}

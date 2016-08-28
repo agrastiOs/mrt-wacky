@@ -1,0 +1,31 @@
+/*ASM Code to implement a proper Run Button patch to EarthBound with CoilSnake
+ASM Code and patch made by ShadowOne333
+If you are going to use it for your hack, please credit me for the patch. */
+import asm65816
+
+/*Jump to our ASM Run Code*/
+ ROM[0xC094E3] = "[22 00 FE FF]"	//JSL $FFFE00
+ ROM[0xC094E7] = "[EA]"			//NOP
+ ROM[0xC094E8] = "[EA]"			//NOP
+
+/*Original ASM code from the previous offset ($C094E3-$C094E8)must be included at the beginning of our custom code to avoid crashes at startup*/
+ ROM[0xFFFE00] = "[B9 5A 12]"		//LDA $125A,y
+ ROM[0xFFFE03] = "[8D 58 0A]"		//STA $0A58
+
+/*ASM Code for a proper Run Button (Button Y enables Running)*/
+ ROM[0xFFFE06] = "[AD 40 98]"		//LDA $9840,	Load RAM offset for current Character status in accumulator for memory
+ ROM[0xFFFE09] = "[29 FF 00]"		//AND #$00FF,	AND accumulator operand
+ ROM[0xFFFE0C] = "[C9 01 00]"		//CMP #$0001,	Compare accumulator with HEX value #$01 (Burnt Status)
+ ROM[0xFFFE0F] = "[D0 01]"		//BNE $FE12,	If comparison is NOT Burnt status (#$01), branch to $FE12
+ ROM[0xFFFE11] = "[6B]"			//RTL,		Return from subroutine
+
+ ROM[0xFFFE12] = "[AD 66 00]"		//LDA $0066,	Load RAM offset for Button Y input
+ ROM[0xFFFE15] = "[29 40 00]"		//AND #$0040,	AND accumulator operand for HEX value for Button Y input
+ ROM[0xFFFE18] = "[D0 04]"		//BNE $FE1E,	If comparison is true, branch.
+ ROM[0xFFFE1A] = "[9C 40 98]"		//STZ $9840,	Stores Zero to memory. Puts #$00 in RAM offset $9840 if condition is false.
+ ROM[0xFFFE1D] = "[6B]"			//RTL,		Return from subroutine
+
+ ROM[0xFFFE1E] = "[AD 40 98]"		//LDA $9840,	Load RAM offset for current Character status in accumulator for memory
+ ROM[0xFFFE21] = "[09 03 00]"		//ORA #$0003,	OR accumulator for Skip Sandwich Status with memory
+ ROM[0xFFFE24] = "[8D 40 98]"		//STA $9840,	Store accumulator value #$03 in memory
+ ROM[0xFFFE27] = "[6B]"			//RTL,		Return from subroutine

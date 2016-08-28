@@ -1,0 +1,14 @@
+import data_18
+import data_22
+import tendabank
+import useful
+
+computer:
+window_open(1)
+"@You opened the TendaBank website." next
+"@Here's what it says:" newline
+"@Website at maintenance." end
+
+info:
+help(173)
+"@A computer you can use to do many things." end

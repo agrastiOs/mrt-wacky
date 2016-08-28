@@ -1,0 +1,568 @@
+/*
+ * EarthBound Text Dump
+ * Time: 10:15:12 - 02/03/2014
+ * Generated using CCScriptWriter.
+ */
+
+command e(label) "{long label}"
+
+// Text Data
+
+l_0xc58813: //Heals all statuses, then inflicts KO
+    "{load_registers}[19 05 00 01 01][19 05 00 01 02]{swap}[1E 01 00 64][1E 05 00 64]" goto(data_06.l_0xc58718)
+
+l_0xc5882e:
+    eob
+
+l_0xc5882f: //Heals all statuses, then inflicts diamondize
+    "{load_registers}[19 05 00 01 01][19 05 00 01 03]" goto(data_06.l_0xc58718)
+
+l_0xc58840:
+    eob
+
+l_0xc58841: //Paralysis
+    "{load_registers}[19 05 00 01 04]" goto(data_06.l_0xc58718)
+
+l_0xc5884d:
+    eob
+
+l_0xc5884e: //Nausea
+    "{load_registers}[19 05 00 01 05]" goto(data_06.l_0xc58718)
+
+l_0xc5885a:
+    eob
+
+l_0xc5885b: //Poison
+    "{load_registers}[19 05 00 01 06]" goto(data_06.l_0xc58718)
+
+l_0xc58867:
+    eob
+
+l_0xc58868: //Sunstroke
+    "{load_registers}[19 05 00 01 07]" goto(data_06.l_0xc58718)
+
+l_0xc58874:
+    eob
+
+l_0xc58875: //The Cold
+    "{load_registers}[19 05 00 01 08]" goto(data_06.l_0xc58718)
+
+l_0xc58881:
+    eob
+
+l_0xc58882: //Mushroom
+    "{load_registers}[19 05 00 02 02]" goto(data_06.l_0xc58718)
+
+l_0xc5888e:
+    eob
+
+l_0xc5888f: //Diamond
+    "{load_registers}[19 05 00 02 03]" goto(data_06.l_0xc58718)
+
+l_0xc5889b:
+    eob
+
+l_0xc5889c: //Homesickness
+    "{load_registers}[19 05 00 06 02]" goto(data_06.l_0xc58718)
+
+l_0xc588a8:
+    eob
+
+l_0xc588a9: //HP Rolldown
+    "{load_registers}{swap}[1E 00 00 64][1E 01 00 5E]" goto(data_06.l_0xc58718)
+
+l_0xc588ba:
+    eob
+
+l_0xc588bb: //PP Rolldown
+    "{load_registers}{swap}[1E 04 00 64][1E 05 00 63]" goto(data_06.l_0xc58718)
+
+l_0xc588cc:
+    eob
+
+l_0xc588cd:
+    "@Reversing the polarity..."
+	pause(10)
+	window_open(8)
+		"[19 02]"
+	"Onett"
+		"[02][19 02]"
+	"Twoson"
+		"[02][19 02]"
+	"H. H. Village"
+		"[02][19 02]"
+	"Cultist's Cabin"
+		"[02][19 02]"
+	"Threed"
+		"[02][19 02]"
+	"Winters"
+		"[02][19 02]"
+	"Saturn Valley"
+		"[02][19 02]"
+	"Belch's Base"
+		"[02][19 02]"
+	"Desert"
+		"[02][19 02]"
+	"Fourside"
+		"[02][19 02]"
+	"Moonside"
+		"[02][19 02]"
+	"Summers"
+		"[02][19 02]"
+	"Dalaam"
+		"[02][19 02]"
+	"Scaraba"
+		"[02][19 02]"
+	"Deep Darkness"
+		"[02][19 02]"
+	"Tenda Village"
+		"[02][19 02]"
+	"L. Underworld"
+		"[02][19 02]"
+	"Ness's Magicant"
+		"[02][19 02]"
+	"Beatles Cave"
+		"[02][19 02]"
+	"Giygas Cave"
+		"[02][1C 0C 03][11][1B 05]"
+	window_closetop
+	window_switch(1) newline
+    "[1B 06][09 14 {e(l_0xc589e6)} {e(l_0xc589ea)} {e(l_0xc589ee)} {e(l_0xc589f2)} {e(l_0xc589f6)} {e(l_0xc589fa)} {e(l_0xc589fe)} {e(l_0xc58a02)} {e(l_0xc58a06)} {e(l_0xc58a0a)} {e(l_0xc58a0e)} {e(l_0xc58a12)} {e(l_0xc58a16)} {e(l_0xc58a1a)} {e(l_0xc58a1e)} {e(l_0xc58a22)} {e(l_0xc58a2e)} {e(l_0xc58a32)} {e(l_0xc58a26)} {e(l_0xc58a2a)}]" goto(data_06.l_0xc58000)
+
+
+//The code this uses is [1F 21 XX], Teleport to Preset Coordinates
+l_0xc589e6:
+    "[1F 21 19]" eob
+
+l_0xc589ea:
+    "[1F 21 1D]" eob
+
+l_0xc589ee:
+    "[1F 21 B9]" eob
+
+l_0xc589f2:
+    "[1F 21 15]" eob
+
+l_0xc589f6:
+    "[1F 21 1C]" eob
+
+l_0xc589fa:
+    "[1F 21 1E]" eob
+
+l_0xc589fe:
+    "[1F 21 8F]" eob
+
+l_0xc58a02:
+    "[1F 21 64]" eob
+
+l_0xc58a06:
+    "[1F 21 90]" eob
+
+l_0xc58a0a:
+    "[1F 21 14]" eob
+
+l_0xc58a0e:
+    "[1F 21 18]" eob
+
+l_0xc58a12:
+    "[1F 21 1F]" eob
+
+l_0xc58a16:
+    "[1F 21 1B]" eob
+
+l_0xc58a1a:
+    "[1F 21 20]" eob
+
+l_0xc58a1e:
+    "[1F 21 AC]" eob
+
+l_0xc58a22:
+    "[1F 21 16]" eob
+
+l_0xc58a26:
+    "[1F 21 91]" eob
+
+l_0xc58a2a:
+    "[1F 21 1A]" eob
+
+l_0xc58a2e:
+    "[1F 21 21]" eob
+
+l_0xc58a32:
+    "[1F 21 17]" eob
+
+l_0xc58a36:
+    "@To whom?" linebreak
+		"[19 02]"
+	"Everybody"
+		"[02][19 02]"
+	"One"
+		"[02][1C 07 02][11]{clearline}[09 02 {e(l_0xc58a61)} {e(l_0xc58a93)}]" goto(data_06.l_0xc58000)
+
+l_0xc58a61:
+    call(l_0xc58add) "[1B 02 {e(l_0xc58a8d)}]{swap}[1E 08 01 00][1E 08 02 00][1E 08 03 00][1E 08 04 00]"
+	"@Adjustments made!" wait 
+	goto(l_0xc58a8d)
+
+l_0xc58a8d:
+    goto(data_06.l_0xc58000)
+
+l_0xc58a92:
+    eob
+
+l_0xc58a93:
+    newline
+    "@Which party member's level should be edited?"
+	"[1A 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01]"
+	"[1B 02 {e(l_0xc58ad7)}]{swap}" call(l_0xc58add) "[1B 02 {e(l_0xc58ad7)}]{swap}[1E 08 00 00]" goto(l_0xc58a93)
+
+l_0xc58ad7:
+    goto(data_06.l_0xc58000)
+
+l_0xc58adc:
+    eob
+
+l_0xc58add:
+    window_clear
+    "@Select level." linebreak
+    "   [1F 52 02]{clearline}" eob
+
+l_0xc58afb:
+    newline
+    "@I'm an ATM, ka-ching." pause(20)
+		"[18 02]"
+		open_hp
+		open_wallet
+		window_open(7)
+		"[19 02]"
+	"Max out the bank"
+		"[02][19 02]"
+	"Max out wallet"
+		"[02][19 02]"
+	"Edit wallet"
+		"[02][19 02]"
+	"Lose wallet"
+		"[02][1C 0C 01][11][1B 05]{window_closetop}{window_switch(1)}[1B 06]" newline
+		"[09 04 {e(l_0xc58b6c)} {e(l_0xc58bac)} {e(l_0xc58bd2)} {e(l_0xc58c30)}]" goto(data_06.l_0xc58000)
+
+l_0xc58b6c:
+    "@You now have 9999999 dollars in the bank." next
+	"@Dolla dolla bill, y'all." wait //Apparently this is a reference to something, but I first heard WheezyWaiter use it in one of his videos.
+	counter(1)
+	goto(l_0xc58b88)
+
+l_0xc58b88:
+    "{ctoarg}{swap}{result_is(200)}[1B 03 {e(l_0xc58ba0)}][1D 06 50 C3 00 00]{inc}" goto(l_0xc58b88)
+
+l_0xc58ba0:
+    "[1D 06 4F C3 00 00]" goto(data_06.l_0xc58000)
+
+l_0xc58bab:
+    eob
+
+l_0xc58bac:
+    "@You're now carrying 99999 dollars." next
+	"@You're ecstatic!" wait
+	"[1D 08 60 EA][1D 08 40 9C]{open_wallet}" goto(data_06.l_0xc58000)
+
+l_0xc58bd1:
+    eob
+
+l_0xc58bd2:
+    "@Input a number." linebreak
+		"[18 05 04 0A]&[18 05 04 02]$[1F 52 05]"
+		clearline
+		"[1B 02 {e(l_0xc58c2a)}]{store_registers}{call(l_0xc58c55)}{load_registers}{swap}[1D 08 00 00]{open_wallet}"
+	"@You're now carrying [1C 0A 00 00 00 00] dollars." next
+	"  JOY!" wait
+	goto(l_0xc58c2a)
+
+l_0xc58c2a:
+    goto(data_06.l_0xc58000)
+
+l_0xc58c2f:
+    eob
+
+l_0xc58c30:
+    call(l_0xc58c55) 
+	"@You are now broke!" next
+    "  Well...{pause(15)}crap." wait
+	goto(data_06.l_0xc58000)
+
+l_0xc58c54:
+    eob
+
+l_0xc58c55:
+    "[1D 09 10 27][1B 02 {e(l_0xc58c55)}]" goto(l_0xc58c5f)
+
+l_0xc58c5f:
+    "[1D 09 E8 03][1B 02 {e(l_0xc58c5f)}]" goto(l_0xc58c69)
+
+l_0xc58c69:
+    "[1D 09 64 00][1B 02 {e(l_0xc58c69)}]" goto(l_0xc58c73)
+
+l_0xc58c73:
+    "[1D 09 0A 00][1B 02 {e(l_0xc58c73)}]" goto(l_0xc58c7d)
+
+l_0xc58c7d:
+    "[1D 09 01 00][1B 02 {e(l_0xc58c7d)}]" eob
+
+l_0xc58c88:
+	window_clear
+    "@Let's get down to business!" next
+	"  NOTE: This stuff sometimes makes the game freeze." wait
+		"[18 02]"
+		open_hp
+		open_wallet
+		window_open(7)
+		"[19 02]"
+	"Escargo Delivery"
+		"[02][19 02]"
+	"Escargo Pickup"
+		"[02][19 02]"
+	"Pizza Delivery"
+		"[02][19 02]"
+	"C. D. Man"
+		"[02][19 02]"
+	"Ay-go Stikke"
+		"[02][1C 0C 01][11][1B 05]"
+		window_closetop
+		window_switch(1)
+		newline
+		"[1B 06][1F C0 05 {e(data_19.l_0xc642a3)} {e(data_19.l_0xc63eb0)} {e(data_20.l_0xc64bbf)} {e(data_21.l_0xc65243)} {e(data_21.l_0xc655b1)}]" eob
+
+l_0xc58d09:
+		"[18 02]"
+		window_close(7)
+		window_open(37)
+		"[19 02]"
+	"Music"
+		"[02][19 02]"
+	"Sound Effects"
+		"[02][19 02]"
+	"SPC Effects"
+		"[02][1C 0C 01][11][1B 05]"
+		window_closetop
+		window_switch(1)
+		"[1B 06][09 03 {e(l_0xc58d46)} {e(l_0xc58d70)} {e(l_0xc58d96)}]" goto(data_06.l_0xc58000)
+
+l_0xc58d46:
+    window_clear
+    "@Which song would you like to hear?" linebreak
+    goto(l_0xc58d58)
+
+l_0xc58d58:
+    "    [1F 52 03]"
+	clearline
+	"[1B 02 {e(l_0xc58d09)}]" swap
+	music(0) //Plays the song
+	goto(l_0xc58d58)
+
+l_0xc58d70:
+    window_clear
+    "@Biff! Pow! Zap!" linebreak
+    goto(l_0xc58d80)
+
+l_0xc58d80:
+    "     [1F 52 03]" clearline
+	"[1B 02 {e(l_0xc58d09)}]" swap
+	sound(0) //Plays the sound effect
+	goto(l_0xc58d80)
+
+l_0xc58d96:
+    window_clear
+	window_open(7)
+	pause(5)
+	"@What kind of effects?" newline
+	menu 1
+	{
+		"From a list":
+		{
+			window_clear
+			menu 1
+			{
+				"Volume Normal": {music_effect(24)}
+				"Volume Medium": {music_effect(7)}
+				"Volume Low": {music_effect(23)}
+				"Helium": {music_effect(21)}
+				"Oxygen?": {music_effect(22)}
+				"Fast-forward": {music_effect(5)}
+				"Quick fade out": {music_effect(2)}
+				"Slow fade out": {music_effect(3)}
+			}
+		}
+		"Specific code":
+		{
+			window_clear
+			"@Need an explanation?" newline
+			menu
+			{
+				"Of course":
+				{
+					window_clear
+					"@Try Googling <CCScript Reference> and searching the page for music (underscore) effect." next
+					window_clear
+					"@There's a complete list there." wait
+					
+				}
+				"No":
+				{
+					window_clear
+					"@Input a number." newline
+					goto(l_0xc58da9)
+				}
+			}
+		}
+	}
+    goto(l_0xc58d09)
+
+mapMusicSwitching:
+	
+
+
+l_0xc58da9: //Manual number entry
+    "     [1F 52 02]" clearline
+	"[1B 02 {e(data_06.l_0xc58000)}]" swap
+	"[1F 07 00]" 
+	goto(l_0xc58da9)
+	
+debug_invasionForces:
+	window_closeall
+	pause(5)
+	window_open(1)
+	window_clear
+	"@Connecting to Mothership..." wait
+	window_clear
+	"  Invasion Commencement Signal" linebreak
+	menu
+	{
+		"Enable": 
+		{
+			window_clear
+			"  Invasion Signal Completed"
+			wait
+			unset(flag 11)
+		}
+		"Disable":
+		{
+			window_clear
+			"  Invasion Signal Terminated"
+			wait
+			set(flag 11)
+		}
+	}
+	goto(data_06.l_0xc58000)
+	eob
+	
+	
+l_0xc58dbf:
+    //See debug_invasionForces for the stuff that used to be here.
+	//It was glitching out, so I copied and pasted everything into a menu command.
+	eob
+
+l_0xc58df1:
+    //This is where the stuff for "Enable" used to be
+	eob
+
+l_0xc58e02:
+    //This is where the stuff for "Disable" used to be
+	eob
+
+l_0xc58e13:
+    "@Which page do you want to read?" linebreak
+    goto(l_0xc58e31)
+
+l_0xc58e31:
+    "     [1F 52 02]"
+	clearline
+	"[1B 03 {e(l_0xc58e4a)}]"
+	window_clear
+	"@That Hint Guy sure knows what's up." wait
+    goto(data_06.l_0xc58000)
+
+l_0xc58e4a:
+    rtoarg
+	"@Page [1C 0A 00 00 00 00]:" next
+    call(data_28.l_0xc70000) linebreak
+    goto(l_0xc58e31)
+
+teleportFXtest:
+	window_clear
+	window_open(7)
+	menu 1
+	{
+		"Straight line":
+		{
+			goto(l_0xc58e9f)
+		}
+		"Spinny":
+		{
+			goto(l_0xc58ea6)
+		}
+		"PK Cutscene":
+		{
+			goto(l_0xc58eb4)
+		}
+		"PK Hack":
+		{
+			goto(l_0xc58ead)
+		}
+		
+	}
+	goto(data_06.l_0xc58000)
+
+l_0xc58e73:
+	goto(teleportFXtest) //I'm just going to put this all in an easy-to-use menu.
+	window_clear
+    "@Enter a number." 
+    "  [1F 52 01]{clearline}[09 04 {e(l_0xc58e9f)} {e(l_0xc58ea6)} {e(l_0xc58ead)} {e(l_0xc58eb4)}]" goto(data_06.l_0xc58000)
+
+l_0xc58e9f:
+    "{window_closeall}[1F 20 04 01]" eob 
+
+l_0xc58ea6:
+    "{window_closeall}[1F 20 04 02]" eob
+
+l_0xc58ead:
+    "{window_closeall}[1F 20 04 03]" eob
+
+l_0xc58eb4:
+    "{window_closeall}[1F 20 04 04]" eob
+
+l_0xc58ebb:
+    "@SKtPSNDWKWEMS." wait
+	call(data_06.l_0xc58555) eob //This calls the SandwitchBot, but it's unused. I wonder why it's here?
+
+l_0xc58ed1:
+    "@NNMDKMSN." end
+
+l_0xc58edd:
+    "[18 02]{window_open(7)}[1C 0C 01][11][09 06 {e(l_0xc58f07)} {e(l_0xc58f37)} {e(l_0xc58f61)} {e(l_0xc58f93)} {e(l_0xc58fc1)} {e(l_0xc58feb)}]{window_closetop}{window_switch(1)}" newline
+    eob
+
+l_0xc58f07:
+    "{window_open(7)}[1C 0C 01]" call(data_08.l_0xc59070) "[1B 02 {e(l_0xc58f35)}][1F C0 05 {e(l_0xc59019)} {e(data_08.l_0xc5901c)} {e(data_08.l_0xc5901f)} {e(data_08.l_0xc59022)} {e(data_08.l_0xc59025)}]" call(data_08.l_0xc59082) eob
+
+l_0xc58f35:
+    newline
+    eob
+
+l_0xc58f37:
+    "{window_open(6)}[1C 0C 01]" call(data_08.l_0xc59070) "[1B 02 {e(l_0xc58f35)}][1F C0 04 {e(data_08.l_0xc59028)} {e(data_08.l_0xc5902b)} {e(data_08.l_0xc5902e)} {e(data_08.l_0xc59031)}]" call(data_08.l_0xc59082) eob
+
+l_0xc58f61:
+    "{window_open(6)}[1C 0C 01]" call(data_08.l_0xc59070) "[1B 02 {e(l_0xc58f35)}][1F C0 06 {e(data_08.l_0xc59034)} {e(data_08.l_0xc59037)} {e(data_08.l_0xc5903a)} {e(data_08.l_0xc5903d)} {e(data_08.l_0xc59040)} {e(data_08.l_0xc59043)}]" call(data_08.l_0xc59082) eob
+
+l_0xc58f93:
+    "{window_open(6)}[1C 0C 01]" call(data_08.l_0xc59070) "[1B 02 {e(l_0xc58f35)}][1F C0 05 {e(data_08.l_0xc59046)} {e(data_08.l_0xc59049)} {e(data_08.l_0xc5904c)} {e(data_08.l_0xc5904f)} {e(data_08.l_0xc59052)}]" call(data_08.l_0xc59082) eob
+
+l_0xc58fc1:
+    "{window_open(6)}[1C 0C 01]" call(data_08.l_0xc59070) "[1B 02 {e(l_0xc58f35)}][1F C0 04 {e(data_08.l_0xc59055)} {e(data_08.l_0xc59058)} {e(data_08.l_0xc5905b)} {e(data_08.l_0xc5905e)}]" call(data_08.l_0xc59082) eob
+
+l_0xc58feb:
+    "{window_open(6)}[1C 0C 01]" call(data_08.l_0xc59070) "[1B 02 {e(l_0xc58f35)}][1F C0 05 {e(data_08.l_0xc59061)} {e(data_08.l_0xc59064)} {e(data_08.l_0xc59067)} {e(data_08.l_0xc5906a)} {e(data_08.l_0xc5906d)}]" call(data_08.l_0xc59082) eob
+
+l_0xc59019:
+    "{counter(10)}" eob
+
+

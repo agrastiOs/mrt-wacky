@@ -1,0 +1,34 @@
+
+
+check:
+	window_open(1)
+	"{pause(60)}{window_open(1)}@Hey, we should check out the meteor first!" 
+	wait
+	window_closeall
+	eob
+	
+shave:
+	if not flag 0x154{
+	"{pause(60)}{window_open(1)}@You have to shave first!" next
+"@Your beard is gross!"
+      set (0x1000) set(9008)	
+wait
+	window_closeall
+	eob
+	}
+	if flag 9008 {
+goto(shave2)
+}
+	if flag 0x154 {
+	eob
+	}
+	
+shave2:
+if not flag 0x154{
+		"{pause(60)}{window_open(1)}@I told you to shave, grossbeard!"
+	wait
+		window_closeall
+		eob
+}
+else {
+eob}

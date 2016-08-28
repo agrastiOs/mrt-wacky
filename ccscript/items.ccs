@@ -1,0 +1,12 @@
+import charnames
+command e(label) "{long label}"
+import useful
+
+inkbottle:
+help(158)
+"@Splash this to an enemy!" next
+"@Might make an enemy made out of metal feel strange," next
+"@an insect solidified," next
+"@and other enemies might cry." next
+call(data_05.l_0xc56dab) next
+eob

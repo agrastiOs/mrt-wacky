@@ -1,0 +1,706 @@
+import asm65816
+import ASMRef
+
+//Enemies will use battle scripts if their Action Order is set to 4 or greater.
+//Poo will still use the battle actions defined in the Enemy Configuration Table for scripted enemies, and the Action Order he uses is the mirrored enemy's -4.
+
+//***Battle script commands***
+
+//Resets script parser to 0.
+//# of bytes = 1
+command BatScpts_ResetScript			"[00]"
+
+//Randomly choose an attack.
+//# of bytes = 2
+command BatScpts_RandomAttack(NumAtks)		"[01 {byte NumAtks}]"
+	//Action entry, must have an equal number of attacks as those specified in previous command, otherwise bad stuff will happen.
+	//# of bytes = 3
+	command BatScpts_RandomAttack_Attack(ActionNum,Argument) "{short ActionNum}{byte Argument}"
+
+//**Branch Commands**
+//NOTE: When setting branch lengths, assume the parser position is at the end of the branch function.
+//NOTE2: Conditional checks are based off of the state at the beginning of a battle round, not during the round.
+//NOTE3: Branch lengths are signed integers, meaning that values 128-255 are treated as negative. (Example: 255 = -1, 253 = -3)
+
+//Always branch.
+//# of bytes = 2
+command BatScpts_Branch(Length)			"[02 {byte Length}]"
+
+//Randomly branch.
+//# of bytes = 3
+command BatScpts_RandomBranch(RanNum,Length)	"[03 {byte RanNum}{byte Length}]"
+
+//Branch if HP less than or equal to value.
+//# of bytes = 3
+command BatScpts_HPBranch(HP,Length)		"[04 {byte HP}{byte Length}]"
+
+//Branch if PP less than or equal to value.
+//# of bytes = 3
+command BatScpts_PPBranch(PP,Length)		"[05 {byte PP}{byte Length}]"
+
+//Branch if under status.
+//# of bytes = 4
+command BatScpts_StatusBranch(Group,Status,Length)"[06 {byte Group}{byte Status}{byte Length}]"
+
+//***Scripts***
+
+//NOTE: Scripts are limited to 256 bytes in length.
+BattleScript_0://Null
+BattleScript_1:
+BattleScript_2:
+BattleScript_3:
+BattleScript_4:
+BattleScript_5:
+BattleScript_6:
+BattleScript_7:
+BattleScript_8:
+BattleScript_9:
+BattleScript_10:
+BattleScript_11:
+BattleScript_12:
+BattleScript_13:
+BattleScript_14:
+BattleScript_15:
+BattleScript_16:
+BattleScript_17:
+BattleScript_18:
+BattleScript_19:
+BattleScript_20:
+BattleScript_21:
+BattleScript_22:
+BattleScript_23:
+BattleScript_24:
+BattleScript_25:
+BattleScript_26:
+BattleScript_27:
+BattleScript_28:
+BattleScript_29:
+BattleScript_30:
+BattleScript_31:
+BattleScript_32:
+BattleScript_33:
+BattleScript_34:
+BattleScript_35:
+BattleScript_36:
+BattleScript_37:
+BattleScript_38:
+BattleScript_39:
+BattleScript_40:
+BattleScript_41:
+BattleScript_42:
+BattleScript_43:
+BattleScript_44:
+BattleScript_45:
+BattleScript_46:
+BattleScript_47:
+BattleScript_48:
+BattleScript_49:
+BattleScript_50:
+BattleScript_51:
+BattleScript_52:
+BattleScript_53:
+BattleScript_54:
+BattleScript_55:
+BattleScript_56:
+BattleScript_57:
+BattleScript_58:
+BattleScript_59:
+BattleScript_60:
+BattleScript_61:
+BattleScript_62:
+BattleScript_63:
+BattleScript_64:
+BattleScript_65:
+BattleScript_66:
+BattleScript_67:
+BattleScript_68:
+BattleScript_69:
+BattleScript_70:
+BattleScript_71:
+BattleScript_72:
+BattleScript_73:
+BattleScript_74:
+BattleScript_75:
+BattleScript_76:
+BattleScript_77:
+BattleScript_78:
+BattleScript_79:
+BattleScript_80:
+BattleScript_81:
+BattleScript_82:
+BattleScript_83:
+BattleScript_84:
+BattleScript_85:
+BattleScript_86:
+BattleScript_87:
+BattleScript_88:
+BattleScript_89:
+BattleScript_90:
+BattleScript_91:
+BattleScript_92:
+BattleScript_93:
+BattleScript_94:
+BattleScript_95:
+BattleScript_96:
+BattleScript_97:
+BattleScript_98:
+BattleScript_99:
+BattleScript_100:
+BattleScript_101:
+BattleScript_102:
+BattleScript_103:
+BattleScript_104:
+BattleScript_105:
+BattleScript_106:
+BattleScript_107:
+BattleScript_108:
+BattleScript_109:
+BattleScript_110:
+BattleScript_111:
+BattleScript_112:
+BattleScript_113:
+BattleScript_114:
+BattleScript_115:
+BattleScript_116:
+BattleScript_117:
+BattleScript_118:
+BattleScript_119:
+BattleScript_120:
+BattleScript_121:
+BattleScript_122:
+BattleScript_123:
+BattleScript_124:
+BattleScript_125:
+BattleScript_126:
+BattleScript_127:
+BattleScript_128:
+BattleScript_129:
+BattleScript_130:
+BattleScript_131:
+BattleScript_132:
+BattleScript_133:
+BattleScript_134:
+BattleScript_135:
+BattleScript_136:
+BattleScript_137:
+BattleScript_138:
+BattleScript_139:
+BattleScript_140:
+BattleScript_141:
+BattleScript_142:
+BattleScript_143:
+BattleScript_144:
+BattleScript_145:
+BattleScript_146:
+BattleScript_147:
+BattleScript_148:
+BattleScript_149:
+BattleScript_150:
+BattleScript_151:
+BattleScript_152:
+BattleScript_153:
+BattleScript_154: //Mr. Spider
+BatScpts_RandomAttack(01)
+BatScpts_RandomAttack_Attack(315,00)
+BatScpts_RandomAttack(01)
+BatScpts_RandomAttack_Attack(316,00)
+BatScpts_RandomAttack(01)
+BatScpts_RandomAttack_Attack(317,00)
+BatScpts_ResetScript
+BattleScript_155:
+BattleScript_156:
+BattleScript_157:
+BattleScript_158:
+BattleScript_159:
+BattleScript_160:
+BattleScript_161:
+BattleScript_162:
+BattleScript_163:
+BattleScript_164:
+BattleScript_165:
+BattleScript_166:
+BattleScript_167:
+BattleScript_168:
+BattleScript_169:
+BattleScript_170:
+BattleScript_171:
+BattleScript_172:
+BattleScript_173:
+BattleScript_174:
+BattleScript_175:
+BattleScript_176:
+BattleScript_177:
+BattleScript_178:
+BattleScript_179:
+BattleScript_180:
+BattleScript_181:
+BattleScript_182:
+BattleScript_183:
+BattleScript_184:
+BattleScript_185:
+BattleScript_186:
+BattleScript_187:
+BattleScript_188:
+BattleScript_189:
+BattleScript_190:
+BattleScript_191:
+BattleScript_192:
+BattleScript_193:
+BattleScript_194:
+BattleScript_195:
+BattleScript_196:
+BattleScript_197:
+BattleScript_198:
+BattleScript_199:
+BattleScript_200:
+BattleScript_201:
+BattleScript_202:
+BattleScript_203:
+BattleScript_204:
+BattleScript_205:
+BattleScript_206:
+BattleScript_207:
+BattleScript_208:
+BattleScript_209:
+BattleScript_210:
+BattleScript_211:
+BattleScript_212:
+BattleScript_213:
+BattleScript_214:
+BattleScript_215:
+BattleScript_216:
+BattleScript_217:
+BattleScript_218:
+BattleScript_219:
+BattleScript_220:
+BattleScript_221:
+BattleScript_222:
+BattleScript_223:
+BattleScript_224:
+BattleScript_225:
+BattleScript_226:
+BattleScript_227:
+BattleScript_228:
+BattleScript_229:
+BattleScript_230: //Insane Killer
+BatScpts_RandomAttack(04)
+BatScpts_RandomAttack_Attack(0x6D,00)
+BatScpts_RandomAttack_Attack(0x3E,0x54)
+BatScpts_RandomAttack_Attack(0x6E,00)
+BatScpts_RandomAttack_Attack(0x78,00)
+BatScpts_RandomAttack(04)
+BatScpts_RandomAttack_Attack(0x53,00)
+BatScpts_RandomAttack_Attack(0x7E,00)
+BatScpts_RandomAttack_Attack(0x6E,00)
+BatScpts_RandomAttack_Attack(0x6D,00)
+BatScpts_ResetScript
+
+
+//Scary code below!
+BattleScript_Table: //NOTE: The [00 00 00]'s below exist so that the table overwrites THAT rather than other data.
+"[00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00][00 00 00]"
+
+//Message Table
+ROMTBL[BattleScript_Table,3,0]	 = BattleScript_0
+ROMTBL[BattleScript_Table,3,1]	 = BattleScript_1
+ROMTBL[BattleScript_Table,3,2]	 = BattleScript_2
+ROMTBL[BattleScript_Table,3,3]	 = BattleScript_3
+ROMTBL[BattleScript_Table,3,4]	 = BattleScript_4
+ROMTBL[BattleScript_Table,3,5]	 = BattleScript_5
+ROMTBL[BattleScript_Table,3,6]	 = BattleScript_6
+ROMTBL[BattleScript_Table,3,7]	 = BattleScript_7
+ROMTBL[BattleScript_Table,3,8]	 = BattleScript_8
+ROMTBL[BattleScript_Table,3,9]	 = BattleScript_9
+ROMTBL[BattleScript_Table,3,10]	 = BattleScript_10
+ROMTBL[BattleScript_Table,3,11]	 = BattleScript_11
+ROMTBL[BattleScript_Table,3,12]	 = BattleScript_12
+ROMTBL[BattleScript_Table,3,13]	 = BattleScript_13
+ROMTBL[BattleScript_Table,3,14]	 = BattleScript_14
+ROMTBL[BattleScript_Table,3,15]	 = BattleScript_15
+ROMTBL[BattleScript_Table,3,16]	 = BattleScript_16
+ROMTBL[BattleScript_Table,3,17]	 = BattleScript_17
+ROMTBL[BattleScript_Table,3,18]	 = BattleScript_18
+ROMTBL[BattleScript_Table,3,19]	 = BattleScript_19
+ROMTBL[BattleScript_Table,3,20]	 = BattleScript_20
+ROMTBL[BattleScript_Table,3,21]	 = BattleScript_21
+ROMTBL[BattleScript_Table,3,22]	 = BattleScript_22
+ROMTBL[BattleScript_Table,3,23]	 = BattleScript_23
+ROMTBL[BattleScript_Table,3,24]	 = BattleScript_24
+ROMTBL[BattleScript_Table,3,25]	 = BattleScript_25
+ROMTBL[BattleScript_Table,3,26]	 = BattleScript_26
+ROMTBL[BattleScript_Table,3,27]	 = BattleScript_27
+ROMTBL[BattleScript_Table,3,28]	 = BattleScript_28
+ROMTBL[BattleScript_Table,3,29]	 = BattleScript_29
+ROMTBL[BattleScript_Table,3,30]	 = BattleScript_30
+ROMTBL[BattleScript_Table,3,31]	 = BattleScript_31
+ROMTBL[BattleScript_Table,3,32]	 = BattleScript_32
+ROMTBL[BattleScript_Table,3,33]	 = BattleScript_33
+ROMTBL[BattleScript_Table,3,34]	 = BattleScript_34
+ROMTBL[BattleScript_Table,3,35]	 = BattleScript_35
+ROMTBL[BattleScript_Table,3,36]	 = BattleScript_36
+ROMTBL[BattleScript_Table,3,37]	 = BattleScript_37
+ROMTBL[BattleScript_Table,3,38]	 = BattleScript_38
+ROMTBL[BattleScript_Table,3,39]	 = BattleScript_39
+ROMTBL[BattleScript_Table,3,40]	 = BattleScript_40
+ROMTBL[BattleScript_Table,3,41]	 = BattleScript_41
+ROMTBL[BattleScript_Table,3,42]	 = BattleScript_42
+ROMTBL[BattleScript_Table,3,43]	 = BattleScript_43
+ROMTBL[BattleScript_Table,3,44]	 = BattleScript_44
+ROMTBL[BattleScript_Table,3,45]	 = BattleScript_45
+ROMTBL[BattleScript_Table,3,46]	 = BattleScript_46
+ROMTBL[BattleScript_Table,3,47]	 = BattleScript_47
+ROMTBL[BattleScript_Table,3,48]	 = BattleScript_48
+ROMTBL[BattleScript_Table,3,49]	 = BattleScript_49
+ROMTBL[BattleScript_Table,3,50]	 = BattleScript_50
+ROMTBL[BattleScript_Table,3,51]	 = BattleScript_51
+ROMTBL[BattleScript_Table,3,52]	 = BattleScript_52
+ROMTBL[BattleScript_Table,3,53]	 = BattleScript_53
+ROMTBL[BattleScript_Table,3,54]	 = BattleScript_54
+ROMTBL[BattleScript_Table,3,55]	 = BattleScript_55
+ROMTBL[BattleScript_Table,3,56]	 = BattleScript_56
+ROMTBL[BattleScript_Table,3,57]	 = BattleScript_57
+ROMTBL[BattleScript_Table,3,58]	 = BattleScript_58
+ROMTBL[BattleScript_Table,3,59]	 = BattleScript_59
+ROMTBL[BattleScript_Table,3,60]	 = BattleScript_60
+ROMTBL[BattleScript_Table,3,61]	 = BattleScript_61
+ROMTBL[BattleScript_Table,3,62]	 = BattleScript_62
+ROMTBL[BattleScript_Table,3,63]	 = BattleScript_63
+ROMTBL[BattleScript_Table,3,64]	 = BattleScript_64
+ROMTBL[BattleScript_Table,3,65]	 = BattleScript_65
+ROMTBL[BattleScript_Table,3,66]	 = BattleScript_66
+ROMTBL[BattleScript_Table,3,67]	 = BattleScript_67
+ROMTBL[BattleScript_Table,3,68]	 = BattleScript_68
+ROMTBL[BattleScript_Table,3,69]	 = BattleScript_69
+ROMTBL[BattleScript_Table,3,70]	 = BattleScript_70
+ROMTBL[BattleScript_Table,3,71]	 = BattleScript_71
+ROMTBL[BattleScript_Table,3,72]	 = BattleScript_72
+ROMTBL[BattleScript_Table,3,73]	 = BattleScript_73
+ROMTBL[BattleScript_Table,3,74]	 = BattleScript_74
+ROMTBL[BattleScript_Table,3,75]	 = BattleScript_75
+ROMTBL[BattleScript_Table,3,76]	 = BattleScript_76
+ROMTBL[BattleScript_Table,3,77]	 = BattleScript_77
+ROMTBL[BattleScript_Table,3,78]	 = BattleScript_78
+ROMTBL[BattleScript_Table,3,79]	 = BattleScript_79
+ROMTBL[BattleScript_Table,3,80]	 = BattleScript_80
+ROMTBL[BattleScript_Table,3,81]	 = BattleScript_81
+ROMTBL[BattleScript_Table,3,82]	 = BattleScript_82
+ROMTBL[BattleScript_Table,3,83]	 = BattleScript_83
+ROMTBL[BattleScript_Table,3,84]	 = BattleScript_84
+ROMTBL[BattleScript_Table,3,85]	 = BattleScript_85
+ROMTBL[BattleScript_Table,3,86]	 = BattleScript_86
+ROMTBL[BattleScript_Table,3,87]	 = BattleScript_87
+ROMTBL[BattleScript_Table,3,88]	 = BattleScript_88
+ROMTBL[BattleScript_Table,3,89]	 = BattleScript_89
+ROMTBL[BattleScript_Table,3,90]	 = BattleScript_90
+ROMTBL[BattleScript_Table,3,91]	 = BattleScript_91
+ROMTBL[BattleScript_Table,3,92]	 = BattleScript_92
+ROMTBL[BattleScript_Table,3,93]	 = BattleScript_93
+ROMTBL[BattleScript_Table,3,94]	 = BattleScript_94
+ROMTBL[BattleScript_Table,3,95]	 = BattleScript_95
+ROMTBL[BattleScript_Table,3,96]	 = BattleScript_96
+ROMTBL[BattleScript_Table,3,97]	 = BattleScript_97
+ROMTBL[BattleScript_Table,3,98]	 = BattleScript_98
+ROMTBL[BattleScript_Table,3,99]	 = BattleScript_99
+ROMTBL[BattleScript_Table,3,100] = BattleScript_100
+ROMTBL[BattleScript_Table,3,101] = BattleScript_101
+ROMTBL[BattleScript_Table,3,102] = BattleScript_102
+ROMTBL[BattleScript_Table,3,103] = BattleScript_103
+ROMTBL[BattleScript_Table,3,104] = BattleScript_104
+ROMTBL[BattleScript_Table,3,105] = BattleScript_105
+ROMTBL[BattleScript_Table,3,106] = BattleScript_106
+ROMTBL[BattleScript_Table,3,107] = BattleScript_107
+ROMTBL[BattleScript_Table,3,108] = BattleScript_108
+ROMTBL[BattleScript_Table,3,109] = BattleScript_109
+ROMTBL[BattleScript_Table,3,110] = BattleScript_110
+ROMTBL[BattleScript_Table,3,111] = BattleScript_111
+ROMTBL[BattleScript_Table,3,112] = BattleScript_112
+ROMTBL[BattleScript_Table,3,113] = BattleScript_113
+ROMTBL[BattleScript_Table,3,114] = BattleScript_114
+ROMTBL[BattleScript_Table,3,115] = BattleScript_115
+ROMTBL[BattleScript_Table,3,116] = BattleScript_116
+ROMTBL[BattleScript_Table,3,117] = BattleScript_117
+ROMTBL[BattleScript_Table,3,118] = BattleScript_118
+ROMTBL[BattleScript_Table,3,119] = BattleScript_119
+ROMTBL[BattleScript_Table,3,120] = BattleScript_120
+ROMTBL[BattleScript_Table,3,121] = BattleScript_121
+ROMTBL[BattleScript_Table,3,122] = BattleScript_122
+ROMTBL[BattleScript_Table,3,123] = BattleScript_123
+ROMTBL[BattleScript_Table,3,124] = BattleScript_124
+ROMTBL[BattleScript_Table,3,125] = BattleScript_125
+ROMTBL[BattleScript_Table,3,126] = BattleScript_126
+ROMTBL[BattleScript_Table,3,127] = BattleScript_127
+ROMTBL[BattleScript_Table,3,128] = BattleScript_128
+ROMTBL[BattleScript_Table,3,129] = BattleScript_129
+ROMTBL[BattleScript_Table,3,130] = BattleScript_130
+ROMTBL[BattleScript_Table,3,131] = BattleScript_131
+ROMTBL[BattleScript_Table,3,132] = BattleScript_132
+ROMTBL[BattleScript_Table,3,133] = BattleScript_133
+ROMTBL[BattleScript_Table,3,134] = BattleScript_134
+ROMTBL[BattleScript_Table,3,135] = BattleScript_135
+ROMTBL[BattleScript_Table,3,136] = BattleScript_136
+ROMTBL[BattleScript_Table,3,137] = BattleScript_137
+ROMTBL[BattleScript_Table,3,138] = BattleScript_138
+ROMTBL[BattleScript_Table,3,139] = BattleScript_139
+ROMTBL[BattleScript_Table,3,140] = BattleScript_140
+ROMTBL[BattleScript_Table,3,141] = BattleScript_141
+ROMTBL[BattleScript_Table,3,142] = BattleScript_142
+ROMTBL[BattleScript_Table,3,143] = BattleScript_143
+ROMTBL[BattleScript_Table,3,144] = BattleScript_144
+ROMTBL[BattleScript_Table,3,145] = BattleScript_145
+ROMTBL[BattleScript_Table,3,146] = BattleScript_146
+ROMTBL[BattleScript_Table,3,147] = BattleScript_147
+ROMTBL[BattleScript_Table,3,148] = BattleScript_148
+ROMTBL[BattleScript_Table,3,149] = BattleScript_149
+ROMTBL[BattleScript_Table,3,150] = BattleScript_150
+ROMTBL[BattleScript_Table,3,151] = BattleScript_151
+ROMTBL[BattleScript_Table,3,152] = BattleScript_152
+ROMTBL[BattleScript_Table,3,153] = BattleScript_153
+ROMTBL[BattleScript_Table,3,154] = BattleScript_154
+ROMTBL[BattleScript_Table,3,155] = BattleScript_155
+ROMTBL[BattleScript_Table,3,156] = BattleScript_156
+ROMTBL[BattleScript_Table,3,157] = BattleScript_157
+ROMTBL[BattleScript_Table,3,158] = BattleScript_158
+ROMTBL[BattleScript_Table,3,159] = BattleScript_159
+ROMTBL[BattleScript_Table,3,160] = BattleScript_160
+ROMTBL[BattleScript_Table,3,161] = BattleScript_161
+ROMTBL[BattleScript_Table,3,162] = BattleScript_162
+ROMTBL[BattleScript_Table,3,163] = BattleScript_163
+ROMTBL[BattleScript_Table,3,164] = BattleScript_164
+ROMTBL[BattleScript_Table,3,165] = BattleScript_165
+ROMTBL[BattleScript_Table,3,166] = BattleScript_166
+ROMTBL[BattleScript_Table,3,167] = BattleScript_167
+ROMTBL[BattleScript_Table,3,168] = BattleScript_168
+ROMTBL[BattleScript_Table,3,169] = BattleScript_169
+ROMTBL[BattleScript_Table,3,170] = BattleScript_170
+ROMTBL[BattleScript_Table,3,171] = BattleScript_171
+ROMTBL[BattleScript_Table,3,172] = BattleScript_172
+ROMTBL[BattleScript_Table,3,173] = BattleScript_173
+ROMTBL[BattleScript_Table,3,174] = BattleScript_174
+ROMTBL[BattleScript_Table,3,175] = BattleScript_175
+ROMTBL[BattleScript_Table,3,176] = BattleScript_176
+ROMTBL[BattleScript_Table,3,177] = BattleScript_177
+ROMTBL[BattleScript_Table,3,178] = BattleScript_178
+ROMTBL[BattleScript_Table,3,179] = BattleScript_179
+ROMTBL[BattleScript_Table,3,180] = BattleScript_180
+ROMTBL[BattleScript_Table,3,181] = BattleScript_181
+ROMTBL[BattleScript_Table,3,182] = BattleScript_182
+ROMTBL[BattleScript_Table,3,183] = BattleScript_183
+ROMTBL[BattleScript_Table,3,184] = BattleScript_184
+ROMTBL[BattleScript_Table,3,185] = BattleScript_185
+ROMTBL[BattleScript_Table,3,186] = BattleScript_186
+ROMTBL[BattleScript_Table,3,187] = BattleScript_187
+ROMTBL[BattleScript_Table,3,188] = BattleScript_188
+ROMTBL[BattleScript_Table,3,189] = BattleScript_189
+ROMTBL[BattleScript_Table,3,190] = BattleScript_190
+ROMTBL[BattleScript_Table,3,191] = BattleScript_191
+ROMTBL[BattleScript_Table,3,192] = BattleScript_192
+ROMTBL[BattleScript_Table,3,193] = BattleScript_193
+ROMTBL[BattleScript_Table,3,194] = BattleScript_194
+ROMTBL[BattleScript_Table,3,195] = BattleScript_195
+ROMTBL[BattleScript_Table,3,196] = BattleScript_196
+ROMTBL[BattleScript_Table,3,197] = BattleScript_197
+ROMTBL[BattleScript_Table,3,198] = BattleScript_198
+ROMTBL[BattleScript_Table,3,199] = BattleScript_199
+ROMTBL[BattleScript_Table,3,200] = BattleScript_200
+ROMTBL[BattleScript_Table,3,201] = BattleScript_201
+ROMTBL[BattleScript_Table,3,202] = BattleScript_202
+ROMTBL[BattleScript_Table,3,203] = BattleScript_203
+ROMTBL[BattleScript_Table,3,204] = BattleScript_204
+ROMTBL[BattleScript_Table,3,205] = BattleScript_205
+ROMTBL[BattleScript_Table,3,206] = BattleScript_206
+ROMTBL[BattleScript_Table,3,207] = BattleScript_207
+ROMTBL[BattleScript_Table,3,208] = BattleScript_208
+ROMTBL[BattleScript_Table,3,209] = BattleScript_209
+ROMTBL[BattleScript_Table,3,210] = BattleScript_210
+ROMTBL[BattleScript_Table,3,211] = BattleScript_211
+ROMTBL[BattleScript_Table,3,212] = BattleScript_212
+ROMTBL[BattleScript_Table,3,213] = BattleScript_213
+ROMTBL[BattleScript_Table,3,214] = BattleScript_214
+ROMTBL[BattleScript_Table,3,215] = BattleScript_215
+ROMTBL[BattleScript_Table,3,216] = BattleScript_216
+ROMTBL[BattleScript_Table,3,217] = BattleScript_217
+ROMTBL[BattleScript_Table,3,218] = BattleScript_218
+ROMTBL[BattleScript_Table,3,219] = BattleScript_219
+ROMTBL[BattleScript_Table,3,220] = BattleScript_220
+ROMTBL[BattleScript_Table,3,221] = BattleScript_221
+ROMTBL[BattleScript_Table,3,222] = BattleScript_222
+ROMTBL[BattleScript_Table,3,223] = BattleScript_223
+ROMTBL[BattleScript_Table,3,224] = BattleScript_224
+ROMTBL[BattleScript_Table,3,225] = BattleScript_225
+ROMTBL[BattleScript_Table,3,226] = BattleScript_226
+ROMTBL[BattleScript_Table,3,227] = BattleScript_227
+ROMTBL[BattleScript_Table,3,228] = BattleScript_228
+ROMTBL[BattleScript_Table,3,229] = BattleScript_229
+ROMTBL[BattleScript_Table,3,230] = BattleScript_230
+
+ROM[0xC25363] = JMP_l(BattleScripts_Hijack)
+BattleScripts_Hijack:
+	BNE(4)
+	JMP_l(0xC25377)//Random
+	CMP_i(1)
+	BNE(4)
+	JMP_l(0xC25385)//Random, Action #1 = 1/2, Action #2 = 1/4, Actions #3 and #4 = 1/8
+	CMP_i(2)
+	BNE(4)
+	JMP_l(0xC253C3)//In order
+	CMP_i(3)
+	BNE(4)
+	JMP_l(0xC253E6)//Two sets of random actions cycled each round.
+	CMP_i(4)
+	BCC(4)
+	JMP_l(BattleScripts_Main)
+	JMP_l(0xC25419)
+
+BattleScripts_Main:
+	LDX_d(0x02)
+	STA_d(0x04)
+	LDA_x(0x000F)//Load NPC value.
+	AND_i(0x00FF)
+	BNE_a(BattleScripts_Main2)
+	LDA_x(0x000E)//Load party value.
+	AND_i(0x00FF)
+	BNE_a(BattleScripts_Main2)
+	LDA_d(0x04)
+	SEC
+	SBC_i(4)
+	JMP_l(BattleScripts_Hijack)
+BattleScripts_Main2:
+	LDA_x(0x0006)	//Load parser.
+	AND_i(0x00FF)
+	STA_d(0x10)	//Store parser to memory.
+	LDA_x(0x0000)	//Load enemy number.
+	LDY_i(3)
+	JSL(0xC08FF7)	//Multiply accumulator by Y.
+	TAX
+	LDA_xl(BattleScript_Table)
+	STA_d(0x08)
+	INX
+	INX
+	LDA_xl(BattleScript_Table)
+	AND_i(0x00FF)
+	STA_d(0x0A)
+BattleScripts_Main3:
+	LDY_d(0x10)	//Load parser
+	LDA_dly(0x08)	//Load from battle script.
+	INC_d(0x10)
+	AND_i(0x00FF)
+	ASL
+	TAX
+	JMP_ix(BattleScripts_CommandTable)
+
+BattleScripts_CommandTable:	
+	short BattleScripts_EndScript
+	short BattleScripts_RandomAction
+	short BattleScripts_ConditionalBranch_LoadBranchLength	//For unconditional branches.
+	short BattleScripts_ConditionalBranch_Random
+	short BattleScripts_ConditionalBranch_LessThanCurrentHP
+	short BattleScripts_ConditionalBranch_LessThanCurrentPP
+	short BattleScripts_ConditionalBranch_IfUnderStatus
+BattleScripts_RandomAction:
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	LDA_dly(0x08)	//Load number of attacks from battle script.
+	AND_i(0x00FF)
+	BEQ_a(BattleScripts_Main3)//Continue reading script if # of attacks is 0.
+	STA_d(0x12)	//Store number of attacks to memory.
+	JSL(Rand_0_to_A1)
+	LDY_i(3)
+	JSL(0xC08FF7)	//Multiply accumulator by Y.
+	CLC
+	ADC_d(0x10)	
+	TAY
+	LDA_dly(0x08)	//Load action from battle script.
+	INY
+	INY
+	LDX_d(0x02)
+	STA_x(0x0004)
+	SEP(0x20)
+	LDA_dly(0x08)	//Load argument from battle script.
+	LDX_d(0x02)	//Load enemy stat pointer.
+	STA_x(0x0008)
+	REP(0x20)
+	LDA_d(0x12)	//Load number of attacks.
+	LDY_i(3)
+	JSL(0xC08FF7)	//Multiply accumulator by Y.
+	CLC
+	ADC_d(0x10)
+	LDX_d(0x02)	//Load enemy stat pointer.
+	STA_x(0x0006)	//Set parser.
+	JMP_l(0xC25466)	//End
+
+BattleScripts_EndScript:
+	LDX_d(0x02)
+	SEP(0x20)
+	STZ_x(0x0006)	//Reset parser
+	REP(0x20)
+	JMP_l(BattleScripts_Main)
+
+BattleScripts_ConditionalBranch_Random:
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	LDA_dly(0x08)	//Load randomize value.
+	AND_i(0x00FF)
+	JSL(Rand_0_to_A1)
+	CMP_i(0)
+	BEQ_a(BattleScripts_ConditionalBranch_LoadBranchLength)
+	INC_d(0x10)	//Increment parser.	
+	BRA_a(BattleScripts_ConditionalBranch_End)
+	
+BattleScripts_ConditionalBranch_LessThanCurrentHP:
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	INC_d(0x10)	//Increment parser.
+	LDA_dly(0x08)	//Load value to compare HP with.
+	LDX_d(0x02)	//Load enemy pointer value
+	CMP_x(0x0013)	//Current HP.
+	BPL_a(BattleScripts_ConditionalBranch_LoadBranchLength)
+	INC_d(0x10)	//Increment parser.	
+	BRA_a(BattleScripts_ConditionalBranch_End)
+
+BattleScripts_ConditionalBranch_LessThanCurrentPP:
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	INC_d(0x10)	//Increment parser.
+	LDA_dly(0x08)	//Load value to compare PP with.
+	LDX_d(0x02)	//Load enemy pointer value
+	CMP_x(0x0019)	//Current PP.
+	BPL_a(BattleScripts_ConditionalBranch_LoadBranchLength)
+	INC_d(0x10)	//Increment parser.	
+	BRA_a(BattleScripts_ConditionalBranch_End)
+
+BattleScripts_ConditionalBranch_IfUnderStatus:
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	LDA_dly(0x08)	//Load group.
+	AND_i(0x00FF)
+	CLC
+	ADC_d(0x02)	//Add to enemy pointer.
+	TAX
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	SEP(0x20)
+	LDA_dly(0x08)	//Load value to compare PP with.
+	CMP_x(0x001D)
+	REP(0x20)
+	BEQ_a(BattleScripts_ConditionalBranch_LoadBranchLength)
+	INC_d(0x10)	//Increment parser.
+	BRA_a(BattleScripts_ConditionalBranch_End)
+
+BattleScripts_ConditionalBranch_LoadBranchLength:
+	LDY_d(0x10)	//Load parser.
+	INC_d(0x10)	//Increment parser.
+	LDA_dly(0x08)	//Load value to compare HP with.
+	AND_i(0x00FF)
+	SEC
+	SBC_i(0x0080)
+	EOR_i(0xFF80)
+	CLC
+	ADC_d(0x10)
+	STA_d(0x10)
+BattleScripts_ConditionalBranch_End:
+	LDA_d(0x10)	//Load parser from memory.	
+	LDX_d(0x02)
+	SEP(0x20)
+	STA_x(0x0006)	//Reset parser
+	REP(0x20)
+	JMP_l(BattleScripts_Main)

@@ -1,0 +1,19 @@
+import hotel
+
+hotelTwoson:
+hotel(50, hotelTwoson_greeting, hotelTwoson_noMoney, hotelTwoson_refuse, hotelTwoson_goodMorning, 19, HOTEL_HEAL)
+
+hotelTwoson_greeting:
+"@Welcome to the Twoson Hotel." next
+"@Would you like to stay?" next
+"@It's $50 per person for the night."
+eob
+
+hotelTwoson_noMoney:
+"@Oh, it seems you're too poor..." end
+
+hotelTwoson_refuse:
+"@No? Okay. Please come back when you're tired." end
+
+hotelTwoson_goodMorning:
+"@Good morning, sir. Did you rest well last night?" end

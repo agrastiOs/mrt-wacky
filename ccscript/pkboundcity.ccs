@@ -1,0 +1,38 @@
+import useful
+import charnames
+
+npc_141:
+"@Fashion is still similar to what it was before the war." next
+"@The war took a really long time, but the fashion changed a little." end
+
+npc_637:
+"@They sadly blocked the exit of the city." next
+"@Roadblocks, trees. All of this done..." next
+"@Just to block the exit." next
+"@But, I think they will allow to exit the city soon." next
+"@I really want to see more places in the world!" end
+
+npc_639:
+"@Isn't this city beautiful?" next
+"@Oh, you look like a newcomer." next
+"@There are no tendas in this city." next
+"@How you did get in the city, though?" next
+"@Okay, I shouldn't have asked." next
+"@I'm retired Tax Collector." next
+"@I prefer old fashion." next
+"@Tax Collectors are very strict and take taxes." next
+"@They might beat you up as you're a first tenda here." next
+"@Watch out!" end
+
+
+npc_626:
+"@That skyscraper is huge!" next
+"@Wonder how much it took to build it." end
+
+npc_634:
+"@Hmm. I have a mind full of jokes." next
+"@I will tell you one." next
+"@Knock knock. Who's there?" next
+"@Sky. Sky who?" next
+"@Skyscraper." next
+"@Yeah, I'm bad at joking." end

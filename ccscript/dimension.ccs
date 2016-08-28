@@ -1,0 +1,162 @@
+import data_35
+import useful
+import asm65816
+import ebpp_std
+import ebpp
+import ebpp_mem
+import charnames
+
+command e(label) "{long label}"
+
+scroll:
+if flag 3591{
+newline
+"@{get_name(1)} opened the {itemname(211)}." next
+"[1D 21 02][09 02 {e(Location11)} {e(Location12)}] {goto (Location13)}"next 
+"[1D 21 02][09 02 {e(Location111)} {e(Location122)}] {goto (Location133)}" end}
+if flag 3592{
+newline
+"@{get_name(1)} opened the {itemname(211)}." next
+"[1D 21 02][09 02 {e(Location111)} {e(Location122)}] {goto (Location133)}" end}
+else{
+newline
+"@{get_name(1)} opened the {itemname(211)}." next
+"[1D 21 02][09 02 {e(Location1)} {e(Location2)}] {goto (Location3)}!" next
+"[1D 21 02][09 02 {e(Location11)} {e(Location12)}] {goto (Location13)}!" next 
+"[1D 21 02][09 02 {e(Location111)} {e(Location122)}] {goto (Location133)}!" end}
+
+scroll2:
+"[1D 21 02][09 02 {e(Location11)} {e(Location12)}] {goto (Location13)}!" end 
+
+scroll3:
+take(0xFF, 211)
+"[1D 21 02][09 02 {e(Location111)} {e(Location122)}] {goto (Location133)}!" end
+
+
+Location1:
+give2 (88,fullscroll)
+set(3591)
+goto(scroll2)
+eob
+
+Location2:
+give2 (103,fullscroll)
+set(3591)
+goto(scroll2)
+eob
+
+Location3:
+give2 (107,fullscroll)
+set(3591)
+goto(scroll2)
+eob
+
+Location11:
+give2 (74,fullscroll)
+unset(3591)
+set(3592)
+goto(scroll3)
+eob
+
+Location12:
+give2 (140,fullscroll)
+unset(3591)
+set(3592)
+goto(scroll3)
+eob
+
+Location13:
+give2 (143,fullscroll)
+unset(3591)
+set(3592)
+goto(scroll3)
+eob
+
+Location111:
+give2 (158,fullscroll)
+unset(3591)
+unset(3592)
+eob
+
+Location122:
+give2 (199,fullscroll)
+unset(3591)
+unset(3592)
+eob
+
+Location133:
+give2 (247,fullscroll)
+unset(3591)
+unset(3592)
+eob
+
+
+
+fullscroll:
+newline
+"@{first_name}'s inventory is full." next
+"@Clean up some stuff and try again." end
+
+scrollhelp:
+help(211)
+"@{itemname(211)}s usually have lots of goods inside them." end
+
+phone:
+"@Beep, beep!" next
+goto(data_31.l_0xc75909)
+eob
+
+tom:
+if flag 15624{
+eob
+}
+if not flag 15624{
+"[1F E5 FF]"
+surprise_lines(5)
+pause(60)
+window_open(1)
+title(1,"Tom")
+"@Huh? Where we are?" next
+"@We gotta get out of here!" next
+"@Good I have my martial art skills." wait
+window_closeall
+set(15624)
+fullsave
+eob}
+
+locked:
+window_open(1)
+"@The door is locked." wait
+window_closeall
+eob
+
+warpcity:
+set(0x68)
+music(0x5B)
+fullsave
+eob
+
+boss:
+music(0x86)
+fullsave
+title(1,"Insane Killer")
+"@Let's play a game!" next
+"@I will tear your soul apart!" next
+"@And you try to defend like those other tendas!" next
+"@Wahahahahaha!" wait
+battle(483) 
+window_open(1)
+title(1,"Insane Killer")
+"@You...|defeated me like those other tendas." next
+"@I'm sick of this." next
+"@Bye." wait
+set(7146)
+hide_sprite(1535,6)
+fullsave
+eob
+
+tophat:
+help(74)
+call(data_05.l_0xc56c40) next
+"@Adored by gentlemen and appreciated by ladies." next
+eob

@@ -1,0 +1,150 @@
+
+import charnames
+import ebpp_std
+
+
+
+command e(label) "{long label}"
+
+
+Example_Store:
+"@Hello sir or madam." next
+"@This is the example store and I will be your robot host today." next
+Example_Store_Main:
+"@How may I be of assistance?" newline
+menu {
+   "Buy": goto(Example_Store_Buy)
+   "Sell": goto(Example_Store_Sell)
+}
+goto(Example_Store_Goodbye)
+
+Example_Store_Goodbye:
+"@Thank you. Have a great day." end
+
+Example_Store_Buy:
+"@What would you like to buy?" next
+open_hp
+"[1A 06 01]" //Call menu for shop 1
+"[1B 02 {e(Example_Store_Again)}]"
+call(0xC5E3BC) // I'm not entirely sure what this part does.
+store_registers
+if full(0xFF)
+"[1B 02 {e(l_Example_Store_Full)}]"
+load_registers
+swap
+"[1D 0A 00]" // Get item price
+store_registers
+swap
+if hasmoney(0)
+"[1B 03 {e(Example_Store_Broke)}]"
+load_registers
+"@{itemname(0)}?" linebreak
+"  Okay." next
+Example_Store_Another:
+"[1D 19 02]" //Check if there are two+ party members
+"[1B 02 {e(Example_Store_Buy_Party)}]"
+"[19 10 01]" //Get number of first party member
+Example_Store_Buy_Continue:
+store_registers
+swap
+full(0)
+"[1B 02 {e(Example_Store_Buy_User_Full)}]"
+load_registers
+"[1D 02 02][1B 02 E0 E1 C5 00]" //Charge for the item
+call(0xC5E26A)
+"[1B 02 {e(Example_Store_Cant_Equip)}]"
+
+Example_Store_Cant_Equip:
+call(0xC5E387)
+"@{name(0)} cannot equip this item." next
+"@Purchase anyway?" newline
+menu {
+    "Yes": call(0xC5E1E0)
+	default "No": goto(Example_Store_Again)
+}
+goto(Example_Store_Again)
+
+Example_Store_Buy_User_Full:
+newline
+"@{name(0)} is carrying too many items." next
+"@Will it be carried by another?" linebreak
+open_wallet
+menu {
+   "Yes": goto(Example_Store_Another)
+   default "No": goto(Example_Store_Again)
+}
+goto(Example_Store_Again)
+
+Example_Store_Buy_Party:
+load_registers
+"@Who will hold this item?" next
+call(0xC5E52E) //Show character inventories
+"[1B 02 {e(Example_Store_Buy_Cancel)}"
+goto(Example_Store_Buy_Continue)
+
+Example_Store_Buy_Cancel:
+"@Cancelling purchase..." end
+
+
+Example_Store_Broke:
+"@You have insufficient funds." next
+"@Perhaps you would like to sell something." next
+goto(Example_Store_Again)
+
+l_Example_Store_Full:
+"@Apologies.  You have no space." next
+"@Perhaps you would like to sell something." next
+goto(Example_Store_Again)
+
+Example_Store_Again:
+"@Would you like anything else?" newline
+open_wallet
+menu {
+   "Yes": goto(Example_Store_Main)
+   default "No": goto(Example_Store_Goodbye)
+}
+goto(Example_Store_Goodbye)
+
+Example_Store_Sell:
+call(0xC5E431)
+"[1B 02 {e(Example_Store_Sell_Nothing)}]"
+"@What would you like to sell?" next
+Example_Store_Sell_What:
+open_hp
+"[1D 19 02][1B 03 99 E4 C5 00]"
+"[1A 01 84 E5 C5 00 8B E5 C5 00 92 E5 C5 00 99 E5 C5 00 00]"
+rtoarg
+call(0xC5E48E)
+"[19 1B 02]"
+"[1B 02 {e(Example_Store_Sell_What)}]"
+"[18 09 02][1B 02 {e(Example_Store_Sell_What)}]"
+call(0xC5E48E)
+"[1B 02 36 E2 C5 00]"
+store_registers
+"[19 19 00 00]" //Put item number in working memory
+"[1D 0B 00]" // Get sell price of item
+"[1B 02 {e(Example_Store_Cant_Sell)}]"
+"@The {itemname(0)}?" linebreak
+"  I will buy it for {swap}$[1C 0A 00 00 00 00]." next
+"@Do you wish to sell it?" linebreak
+menu {
+    "Yes": goto(Example_Store_Sell_Yes)
+	default "No": goto(Example_Store_Again)
+}
+goto(Example_Store_Again)
+
+Example_Store_Sell_Yes:
+givemoney(0)
+load_registers
+"[1D 0F 00 00]"
+open_wallet
+call(0xC5D835)
+goto(Example_Store_Again)
+
+Example_Store_Cant_Sell:
+"@Sorry, can't accept this item." next
+{goto (Example_Store_Again)}
+
+Example_Store_Sell_Nothing:
+"@Canceling sell..." next
+goto(Example_Store_Again)

@@ -1,0 +1,219 @@
+import charnames
+import asm65816
+import ASMRef
+import useful
+import data_64
+import data_63
+import data_65
+command e(label) "{long label}"
+
+hackerplaying:
+newline
+"@{sound(25)}{user} tried to make a hack!" next
+eob
+
+Grownup_Antics:
+"[1D 21 02][09 02 {e(data_65.l_0xef8bfb)} {e(data_65.l_0xef8c1d)}]" goto(data_65.l_0xef8c3a)
+
+explosive:
+newline
+"@{sound(25)}{user} threw loads of small explosives!" next
+eob
+
+ray:
+newline
+"@{sound(25)}{user} fired a ray of energy" linebreak
+"  from his glasses!" next
+eob
+
+laser:
+newline
+"@{sound(25)}{user} stumbled," next
+"  and fired a strange laser!" sound(0x43)
+next 
+eob
+
+sandwich:
+newline
+"@{user} ate a" linebreak
+"  bologne sandwich and gave a piece to {get_name(1)}!" next
+"@{get_name(1)} hates bologne sandwiches," next
+"  but ate the piece anyway." next
+    newline
+    "@{user}'s HP are" linebreak
+    "  maxed out!{sound(36)}[03]" eob
+call(data_61.l_0xef69ba)
+eob
+
+sandwichcode: {
+	REP	(0x31)
+	LDA_i	(30)
+	JSL	(Lifeup_General)
+	RTL
+}
+
+
+spirit1:
+newline
+"@{sound(25)}{user} is  shouting" linebreak
+"  out of the horror!" next sound(0x60)
+eob
+
+
+spirit2:
+newline
+"@{sound(25)}{user} is crying." next sound(0x31)
+eob
+
+
+spirit3:
+newline
+"@{sound(25)}{user} kept crying." next sound(0x31)
+eob
+
+spirit4:
+newline
+"@{sound(25)}Out of the anger and horror," next sound(0x32) 
+"  {user} fired a massive wave of energy!" next sound(0x35)
+eob
+
+spider1:
+newline
+"@{sound(25)}{user} politely asks you to prepare" linebreak
+"  yourself for his attack." next
+eob
+
+spider2:
+"[1D 21 02][09 02 {e(spider21)}{e(spider22)}]"
+
+spider21:
+    newline
+    "[1F 41 08][1B 02 {e(l_0xef84a7)}]{sound(25)}@{user} is attacking!{sound(26)}[03]" eob
+
+spider22:
+    newline
+    "{call(useful.UserCode)}@{user} threw" linebreak
+    "  a punch![03]" eob
+
+	spider3:
+"[1D 21 02][09 02 {e(spider31)}{e(spider32)}]"
+
+spider31:
+newline
+"@{sound(25)}{user} apologizes for hitting you." next
+eob
+
+spider32:
+newline
+"@{sound(25)}{user} begs you pardon for hitting you." next
+eob
+
+inkbottle:
+newline
+"@{call(useful.UserCode)}{user} throws the {itemname(158)}!{sound(0x11)}" next
+"@{sound(0x30)}{target} was splashed!" next
+eob
+
+inkbottleCode:{
+
+  REP(0x31)
+
+    JSL(Rand)
+
+    AND_i(0x0001)
+
+    BEQ_a(Fail)
+
+    LDX_a(0xA972)
+
+    LDA_x(0x000E)
+
+    AND_i(0x00FF)
+
+    BEQ_a(Normal)
+
+    LDA_x(0x0000)
+
+    LDY_i(94)
+
+    JSL(0xC08FF7)
+
+    TAX
+
+    LDA_xl(0xD595A4)
+
+    AND_i(0x00FF)
+
+    BEQ_a(Normal)
+
+    CMP_i(1)
+
+    BEQ_a(Insect)
+
+    CMP_i(2)
+
+    BEQ_a(Metal)
+
+Fail:
+
+    BText(0xEF766E) 
+
+Return:
+
+    RTL
+
+Normal:
+
+    LDX_i(2)
+
+    TXY
+
+    LDA_a(0xA972)
+
+    JSL(Inflict_Status)
+
+    CMP_i(0)
+
+    BEQ_a(Fail)
+
+    BText(0xEF6BBB)
+
+    BRA_a(Return)
+
+Insect:
+
+    LDX_i(2)
+
+    LDY_i(4)
+
+    LDA_a(0xA972)
+
+    JSL(Inflict_Status)
+
+    CMP_i(0)
+
+    BEQ_a(Fail)
+
+    BText(0xEF6BEF)
+
+    BRA_a(Return)
+
+Metal:
+
+    LDX_i(3)
+
+    LDY_i(1)
+
+    LDA_a(0xA972)
+
+    JSL(Inflict_Status)
+
+    CMP_i(0)
+
+    BEQ_a(Fail)
+
+    BText(0xEF6C3A)
+
+    BRA_a(Return)
+
+}

@@ -1,0 +1,191 @@
+import asm65816
+import charnames
+import ebpp_std
+import ebpp
+import ebpp_mem
+import useful
+ 
+command e(label) "{long label}"
+
+fullinv:
+title(1,"Tom")
+"@Your inventory is full!" end
+
+tenda:
+if hasitem(0xFF,17){
+"[04 e2 00][08 cb de c5 00][05 e2 00][02]"
+}
+else{
+title(1,"Tom")
+"@Oh golly!/ You can't fight without a pen!" next
+"@Here's one." next
+give2(17,fullinv)
+goto(tenda2)
+eob}
+
+tenda2:
+"[04 e2 00][08 cb de c5 00][05 e2 00][02]"
+
+l_tenda:
+title(1,"Tom")
+"@Hi, {get_name(1)}!" next
+"@It's me, Tom! I got a shop and I took some things to sell!" next
+"@I noticed a tenda programming robots and talking with some guys." next
+"@Looks like he wants to attack you!" next
+"@Maybe you would want some goods from me?" next
+"@I also need some things." next
+Example_Store_Main:
+"@What you want to do, buy or sell?" newline
+menu {
+   "Buy": goto(Example_Store_Buy)
+   "Sell": goto(Example_Store_Sell)
+}
+goto(Example_Store_Goodbye)
+
+Example_Store_Goodbye:
+"@Thank you. Good luck!" end
+
+Example_Store_Buy:
+"@What would you like to buy?" next
+open_hp
+"[1A 06 01]" //Call menu for shop 1
+"[1B 02 {e(Example_Store_Again)}]"
+call(0xC5E3BC) // For randomizing Lucky Sandwiches.
+store_registers
+if full(0xFF){
+"[1B 02 {e(Example_Store_Full)}]"}
+load_registers
+swap
+"[1D 0A 00]" // Get item price
+store_registers
+swap
+if hasmoney(0){
+"[1B 03 {e(Example_Store_Broke)}]"
+}
+else {
+load_registers
+"@{itemname(0)}?" linebreak
+"@Okay." next }
+Example_Store_Another:
+"[1D 19 02]" //Check if there are two+ party members
+"[1B 02 {e(Example_Store_Buy_Party)}]"
+"[19 10 01]" //Get number of first party member
+Example_Store_Buy_Continue:
+store_registers
+swap
+full(0)
+"[1B 02 {e(Example_Store_Buy_User_Full)}]"
+load_registers
+"[1D 02 02][1B 02 E0 E1 C5 00]" //Charge for the item
+call(0xC5E26A)
+"[1B 02 {e(Example_Store_Cant_Equip)}]"
+
+Example_Store_Cant_Equip:
+call(0xC5E387)
+"@You cannot equip this item, {get_name(1)}." next
+"@Purchase anyway?" newline
+menu {
+    "Yes": call(0xC5E1E0)
+	default "No": goto(Example_Store_Again)
+}
+goto(Example_Store_Again)
+
+Example_Store_Buy_User_Full:
+newline
+"@You are carrying too many items." next
+"@Will it be carried by another?" linebreak
+open_wallet
+menu {
+   "Yes": goto(Example_Store_Another)
+   default "No": goto(Example_Store_Again)
+}
+
+Example_Store_Buy_Party:
+load_registers
+"@Who will hold this item?" next
+call(0xC5E52E) //Show character inventories
+"[1B 02 {e(Example_Store_Buy_Cancel)}"
+goto(Example_Store_Buy_Continue)
+
+Example_Store_Buy_Cancel:
+"@OK, I thought you would buy something..." end
+
+
+Example_Store_Broke:
+"@You don't have enough money." next
+"@Perhaps you would like to sell something." next
+goto(Example_Store_Again)
+
+Example_Store_Full:
+"@Sorry. You have no space." next
+"@Perhaps you would like to sell something." next
+goto(Example_Store_Again)
+
+Example_Store_Again:
+"@Would you like anything else?" newline
+open_wallet
+menu {
+   "Yes": goto(Example_Store_Main)
+   default "No": goto(Example_Store_Goodbye)
+}
+goto(Example_Store_Goodbye)
+
+Example_Store_Sell:
+call(0xC5E431)
+"[1B 02 {e(Example_Store_Sell_Nothing)}]"
+"@What would you like to sell?" next
+Example_Store_Sell_What:
+open_hp
+"[1D 19 02][1B 03 99 E4 C5 00]"
+"[1A 01 84 E5 C5 00 8B E5 C5 00 92 E5 C5 00 99 E5 C5 00 00]"
+rtoarg
+call(0xC5E48E)
+"[19 1B 02]"
+"[1B 02 {e(Example_Store_Sell_What)}]"
+"[18 09 02][1B 02 {e(Example_Store_Sell_What)}]"
+call(0xC5E48E)
+"[1B 02 36 E2 C5 00]"
+store_registers
+"[19 19 00 00]" //Put item number in working memory
+"[1D 0B 00]" // Get sell price of item
+"[1B 02 {e(Example_Store_Cant_Sell)}]"
+"@The {itemname(0)}?" linebreak
+"  I will buy it for {swap}$[1C 0A 00 00 00 00]." next
+"@Do you wish to sell it?" linebreak
+menu {
+    "Yes": goto(Example_Store_Sell_Yes)
+	default "No": goto(Example_Store_Again)
+}
+goto(Example_Store_Again)
+
+Example_Store_Sell_Yes:
+givemoney(0)
+load_registers
+"[1D 0F 00 00]"
+open_wallet
+call(0xC5D835)
+goto(Example_Store_Again)
+
+Example_Store_Cant_Sell:
+"@Sorry, I don't want this." next
+goto(Example_Store_Again)
+
+Example_Store_Sell_Nothing:
+"OK, but I thought you would peddle me something..." next
+goto(Example_Store_Again)
+
+tom:
+title(1,"Tom")
+"@Hi!" newline
+"@When I was recovering you," next
+"@he was gone." next
+"@I tried to stop him." next
+"@Not only that, someone looking like you," next
+"@pushed me away and ran like insane." next sound(114)
+"@Sorry for leaving you alone." next
+"@Sadly, I lost my box." next
+"@But, I will join you!" next
+"@Let's check that meteor!" next
+"@It's interesting." next
+"{window_closeall}{party_add(5)}{hide_char (5)}[1F F1 BA 00 2F 00][1F 61]{hide_sprite (186,6)}{show_char(5,1)}{music(123)}{pause(120)}{pause(60)}{AGAINSTTENDA}{window_open(1)}@(Tom joins you.)[03]{window_closeall}"
+set(9255) set(6294) eob

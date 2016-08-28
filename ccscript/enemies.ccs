@@ -1,0 +1,14 @@
+import charnames
+
+hackersencounter:
+"@" call(data_63.l_0xef790b) " came and told {get_name(1)} to give his hack to him!" next
+eob
+
+spider_encounter:
+"@{user} started the duel." next
+eob
+
+spider_defeat:
+newline
+"@{target} has lost.{sound(33)}" next
+eob
