@@ -9,7 +9,7 @@ char_direction(1,1)
 "@Shave?" linebreak
 menu {
 "Yes" : {"@You can't see a thing!" next
-"@Turn on the lights." end}
+"  Turn on the lights." end}
 "No" : {
 window_closeall
 eob
@@ -35,7 +35,7 @@ if flag 8264 and flag 517 {
 char_direction(1,1)
 "@Shave?" linebreak
 menu {
-"Yes" : {"@You've shaved already, so you gazed into your good looks." wait
+"Yes" : {"@You've shaved already,[10 0F] so you gazed into your good looks." wait
 eob
 }
 "No" : {
@@ -50,25 +50,25 @@ goto(t)
 t:
 if not flag 0x500 {
 set(8761) set(8762)
-"@Let's start to shave! Wait a minute..." next
+"@Let's shave![10 3F] Wait a minute..." next
 warp(1)
 "[1F E5 FF]"
 title(1,"Evil Mr. Tenda")
-"@Your wicked good looks have opened a rift between the Mirror Universe," next
-"@and your universe." next
+"@Your wicked good looks have opened a rift between the Mirror Universe,[10 0F][00]"
+"  and your universe." next
 "@I am a replica of you." next
-"@However, now that I am in this world," next
-"@there is no space for you to be here." next
+"  However, now that I am in this world,[10 0F][00]"
+"  there is no space for you to be here." next
 "@Tenda Soldier, battle him!" next
 title(1,"Tenda Soldier")
-"@NO, you forced me to go here!" next
+"@NO,[10 0F] you forced me to come here!" next
 title(1,"Evil Mr. Tenda")
-"@Battle this weakling from the real universe, or else..." next
+"@Battle this weakling from the real universe,[10 0F] or else..." next
 title(1,"Tenda Soldier")
 "@Or...|else...|you will take my pizza?" next
 title(1,"Evil Mr. Tenda")
-"@Um...|yes, I will do that." next
-"@And I will capture your friend Tenda!" next
+"@Um...|yes,[10 0F] I will do that." next
+"@And I will capture your Tenda friend!" next
 title(1,"Tenda Soldier")
 "@Okay then..." next 
 battle(482)

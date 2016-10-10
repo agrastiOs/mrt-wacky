@@ -12,16 +12,7 @@ title(1,"Tom")
 "@Your inventory is full!" end
 
 tenda:
-if hasitem(0xFF,17){
 "[04 e2 00][08 cb de c5 00][05 e2 00][02]"
-}
-else{
-title(1,"Tom")
-"@Oh golly!/ You can't fight without a pen!" next
-"@Here's one." next
-give2(17,fullinv)
-goto(tenda2)
-eob}
 
 tenda2:
 "[04 e2 00][08 cb de c5 00][05 e2 00][02]"
@@ -29,7 +20,7 @@ tenda2:
 l_tenda:
 title(1,"Tom")
 "@Hi, {get_name(1)}!" next
-"@It's me, Tom! I got a shop and I took some things to sell!" next
+"@It's me,[10 0F] Tom![10 0F] I got a shop and I took some things to sell!" next
 "@I noticed a tenda programming robots and talking with some guys." next
 "@Looks like he wants to attack you!" next
 "@Maybe you would want some goods from me?" next

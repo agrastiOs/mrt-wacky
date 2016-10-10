@@ -16,7 +16,7 @@ gift:
     if not pen_opened {
     "@{get_name(1)} opened the desk's drawer."
     next sound(16)
-    "@{get_name(1)} got a {itemname(17)}!"
+    "@{get_name(1)} got a {itemname(17)}![10 0F]"
     sound(34) give2(17, giftfull)
     "[1f f1 15 00 29 00]"
     set(0x402)
@@ -37,7 +37,7 @@ end
 light:
     if not lights_on {
 		if not flag 983 {
-		"@The light button doesn't seem to do anything???" end}
+		"@The light-switch doesn't seem to do anything." end}
 		if flag 983 {
         "@Turn on the light?"
         newline
@@ -71,7 +71,7 @@ light:
 light2:
     if not lights_on {
 		if not flag 983 {
-		"@The light button doesn't seem to do anything???" end}
+		"@The light-switch doesn't seem to do anything." end}
 		if flag 983 {
         "@Turn on the light?"
         newline
@@ -120,7 +120,7 @@ wait
 eob
 machine:
     if not flag 979{
-	"@There's a note, which is put on the switch."
+	"@There's a note,[10 0F] which is stuck to the switch."
 next
     "@Haha, ful! Hou dos it fyl being out of powah?"
 next
@@ -128,24 +128,22 @@ next
 next
     "@You tear the note off."
 next
-	"@Seems like you also ripped some web, which was stuck with the paper."
+	"@Seems like you also ripped some spider web,[10 0F] which was stuck to the paper."
 next
 pause(60)
 title(1,"Mr. Spider")
-	"@Excuse me, kind sir,"
+	"@Excuse me, kind sir,[10 0F][00]"
+	"  but you just obliterated my humble home."
 next
-	"@but you just obliterated my humble home."
+	"@This means that we will have to settle this,[10 0F][00]"
+	"  with a duel."
 next
-	"@This means that we will have to settle that"
+	"@Sir,[10 0F] do you have a weapon?"
 next
-	"@by a duel."
-next
-	"@Sir, do you have a weapon?" 
-next
-	"@No? A thousand pardons, but I will want a fair duel." 
+	"@No?[10 2F] A thousand pardons,[10 0F] but I would like a fair duel." 
 next
 set(982)
-	"@Could you please get a weapon?" 
+	"@Could you please get a weapon?"
 end
 }
 	else{
@@ -154,20 +152,18 @@ end
 end}
 	if flag 982 and if flag 979{
 title(1,"Mr. Spider")
-	"@Excuse me, kind sir,"
+	"@Excuse me,[10 0F] kind sir,[10 0F][00]"
+	"  but you just obliterated my humble home."
 next
-	"@but you just obliterated my humble home."
-next
-	"@This means that we will have to settle that"
-next
-	"@by a duel."
+	"@This means that we will have to settle this,[10 0F][00]"
+	"  with a duel."
 wait
 battle(10)
 window_open(1)
 title(1,"Mr. Spider")
 	"@Oh bother."
 next
-	"@It seems that I can't rivalize with someone as strong as you, sir."
+	"@It seems that I can't rivalize with someone as strong as you,[10 0F] sir."
 next
 window_closeall
 window_open(1)
@@ -177,7 +173,7 @@ set(983)
 eob
 }
 	flag 979{
-	"@There's a note, which is put on the switch."
+	"@There's a note,[10 0F] which is stuck to the switch."
 next
     "@Haha, ful! Hou dos it fyl being out of powah?"
 next
@@ -185,24 +181,22 @@ next
 next
     "@You tear the note off."
 next
-	"@Seems like you also ripped some web, which was stuck with the paper."
+	"@Seems like you also ripped some spider web,[10 0F] which was stuck to the paper."
 next
 pause(60)
 title(1,"Mr. Spider")
-	"@Excuse me, kind sir,"
+	"@Excuse me,[10 0F] kind sir,[10 0F][00]"
+	"  but you just obliterated my humble home."
 next
-	"@but you just obliterated my humble home."
-next
-	"@This means that we will have to settle that"
-next
-	"@by a duel."
+	"@This means that we will have to settle this,[10 0F][00]"
+	"  with a duel."
 wait
 battle(10)
 window_open(1)
 title(1,"Mr. Spider")
 	"@Oh bother."
 next
-	"@It seems that I can't rivalize with someone as strong as you, sir."
+	"@It seems that I can't rivalize with someone as strong as you,[10 0F] sir."
 next
 window_closeall
 window_open(1)
