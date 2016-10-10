@@ -108,7 +108,7 @@ else{
     "@Hello,{pause(10)} it's TendaBank!" next
 	"@We recently came to your place!" next
      "@We can record everything about you,[10 0F][00]"
-	"  and transact some money to your credit card!" next
+	"  and transact money to your credit card!" next
 	"@TENDABAAANK IS AWESOME!" next
 	"@You can also use your computer to transact money!" next
 	"@Okay,[10 0F] enough ads." next

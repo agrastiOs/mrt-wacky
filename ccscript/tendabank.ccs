@@ -7,7 +7,7 @@ tendabank:
 "@We can record everything about you,[10 0F][00]" next
 "  and transact money to your credit card!" next
 "@TENDABAAANK IS AWESOME!" next
-"@You can also use your computer to transact some money!" next
+"@You can also use your computer to transact money!" next
 "@You should have{open_wallet} ${stat(7)} on TendaBank." next 
 "@What do you want to do?" newline
 menu {
