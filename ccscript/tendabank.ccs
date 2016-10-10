@@ -2,14 +2,14 @@ import charnames
 import useful
 
 tendabank:
-"@Hello, {get_name(1)}." linebreak
+"@Hello,[10 0F] {get_name(1)}." next
 "@It's TendaBank!" next
-"@We can record everything about you," next
-"@and transact some money to your credit card!" next
+"@We can record everything about you,[10 0F][00]" next
+"  and transact money to your credit card!" next
 "@TENDABAAANK IS AWESOME!" next
 "@You can also use your computer to transact some money!" next
 "@You should have{open_wallet} ${stat(7)} on TendaBank." next 
-"@What you want to do?" newline
+"@What do you want to do?" newline
 menu {
 "Record":{
 fullsave
@@ -21,11 +21,8 @@ eob
 {call(0xC62D30)}
 }
 default "Nothing":{
-"@OK. Then,| goodbye!" wait
+"@OK then,[10 0F]| goodbye!" wait
 eob
 }
 }
 eob
-
-
-

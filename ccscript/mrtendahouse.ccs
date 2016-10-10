@@ -16,7 +16,7 @@ gift:
     if not pen_opened {
     "@{get_name(1)} opened the desk's drawer."
     next sound(16)
-    "@{get_name(1)} got a {itemname(17)}!"
+    "@{get_name(1)} got a {itemname(17)}![10 0F]"
     sound(34) give2(17, giftfull)
     "[1f f1 15 00 29 00]"
     set(0x402)
@@ -37,7 +37,7 @@ end
 light:
     if not lights_on {
 		if not flag 983 {
-		"@The lightswitch doesn't seem to do anything." end}
+		"@The light-switch doesn't seem to do anything." end}
 		if flag 983 {
         "@Turn on the light?"
         newline
@@ -71,7 +71,7 @@ light:
 light2:
     if not lights_on {
 		if not flag 983 {
-		"@The lightswitch doesn't seem to do anything." end}
+		"@The light-switch doesn't seem to do anything." end}
 		if flag 983 {
         "@Turn on the light?"
         newline

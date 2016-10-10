@@ -239,12 +239,12 @@ l_0xe10b86:
     "[ 02 0C ][ 01 32 ]The year is 201X[ 09 ][ 00 ]"
 
 l_0xe10b9c:
-    "[02 0C][01 0C]Seattle, a small town in USA[09][00]"
+    "[ 02 0C ][ 01 0C ]Seattle, a small town in USA[09][00]"
 
 l_0xe10bc2:
-    "[02 0C][01 3D]Mr. Tenda's hacking base[09][00]"
+    "[ 02 0C ][ 01 3D ]Mr. Tenda's hacking base[09][00]"
 l_0xe10bd2:
-    "[02 0C][01 3D]{first_name}'s hacking base[09][00]"
+    "[ 02 0C ][ 01 3D ][ 08 01 ]'s hacking base[09][00]"
 
 l_0xe10bfd:
     "[ 02 0C ][ 01 15 ]Snow Wood Boarding House[ 09 ][ 00 ]"

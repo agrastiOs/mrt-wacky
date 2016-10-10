@@ -104,26 +104,26 @@ eob
 } 
 else{  
   "@{get_name(1)} answered the phone." next
-    "{sound(11)}{pause(20)}" call(data_16.l_0xc5e812)          	"@Hello,{pause(10)} it's TendaBank!" next
+    "{sound(11)}{pause(20)}" call(data_16.l_0xc5e812)
+    "@Hello,{pause(10)} it's TendaBank!" next
 	"@We recently came to your place!" next
-     "@We can record everything about you," next  
-	"@and transact some money to your credit card!" next
+     "@We can record everything about you,[10 0F][00]"
+	"  and transact some money to your credit card!" next
 	"@TENDABAAANK IS AWESOME!" next
-	"@You can also use your computer to transact some money!" next
-	"@Okay, enough of ads." next
+	"@You can also use your computer to transact money!" next
+	"@Okay,[10 0F] enough ads." next
 	"@Do you remember me?" next
      "@It's me!" newline
 	"@I'm so sad we can't meet anymore!" next
-	"@Oh, you don't remember me?" next
-	"@Okay, I will tell you about me later." next
-	"@I have no time now. You want to get to the meteor?" next
-	"@Sure! Go for it!" next
-	"@I will help you with my services!" next
-	"@For now, my employees will help you." next
-	"@I will also sometimes give you some money," next
-	"@when you will go through your small adventure," next
-	"@and when you will smash some weird robos and guys!" next
-	"@How do I know this? I will tell you later." next
+	"@Oh,[10 0F] you don't remember me?" next
+	"@Okay,[10 0F] we'll talk about me later." next
+	"@I have no time now.[10 0F] You want to get to the meteor?" next
+	"@Sure![10 0F] Go for it!" next
+	"@For now,[10 0F] my employees will help you." next
+	"@Every once in a while,[10 0F] I'll give you some money,[10 0F][00]"
+	"  when you walk around in your small adventure,[10 0F][00]" next
+	"  and when you smash some weird robos and guys!" next
+	"@How do I know this?[10 0F] I'll tell you later." next
     "@Slam!{pause(20)}  Beeeeeeeep!{wait}{sound(11)}{set(flag 98)}{unset(flag 95)}{unset(flag 753)}{unset(flag 467)}{set(flag 199)}[1D 06 1E 00 00 00]{save}[19 26 01]" eob
 }
 }
