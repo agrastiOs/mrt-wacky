@@ -549,7 +549,7 @@
     Destination Y: 29
     X: 4
     Y: 29
-    Style: 0
+    Style: 1
     Text Pointer: $0
     Direction: right
   31:
@@ -595,7 +595,7 @@
     Destination Y: 47
     X: 2
     Y: 21
-    Style: 0
+    Style: 1
     Text Pointer: $0
     Direction: up
 1:

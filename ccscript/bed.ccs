@@ -9,7 +9,7 @@ window_closeall
 "[1f 15 6a 00 79 02 01][1f 61][10 78][1f 1f 6a 00 06]"
 {music(12)}{pause(200)}{music_resume}{pause(1)}
 window_open (1)
-"@You're fully rested." wait
+"@You're fully rested." wait window_closeall
 warp(2)
 eob
 }
@@ -27,7 +27,7 @@ window_closeall
 "[1f 15 6a 00 79 02 01][1f 61][10 78][1f 1f 6a 00 06]"
 {music(12)}{pause(200)}{music_resume}{pause(1)}
 window_open (1)
-"@You're fully rested." wait
+"@You're fully rested." wait window_closeall
 warp(3)
 eob
 }

@@ -15,21 +15,21 @@ init:
 "[1F E5 FF]"
 window_open(1)
 "@You're creating a hack." next give(1,103) music(15) give(1,88) give(1,88) give(1,88)
-"@You heard the meteorite." next music_resume set(35) unset(11) set(21) toggle(95) toggle(199)
-"@Let's check it out, because you're a bit bored," next
-"@and very curious." next
-"@Oh, but you should shave to the mirror in your house," next 
-"@before you will go to the meteor." next
+"@You heard the meteorite." set(35) unset(11) set(21) toggle(95) toggle(199) pause(128) music_resume "[00]"
+"@Let's check it out,[10 0F] because you're a bit bored,[10 0F]"
+" and very curious." next
+"@First,[10 0F] you need to go to your house and shave,[10 0F]" 
+" before you check it out." next
 "@{get_name(1)} took" linebreak
 "  the {itemname(173)}." sound(SND_SPECIALITEM) give(1,173) next
-"@Also get the pen in your house from your desk in down-left corner of room," next
-"@you can write or fight with it." next 
+"@Also, you should get the pen in your house.[03] It's in the bottom-left corner of the room,[10 0F]"
+" you can write or fight with it." next 
 "@Why would you need to fight?" next
 "@Because there could be some dangerous aliens from the meteor!" next
-"@Your house looks so similar to Ness' house in EarthBound..." next
-"@But you know, you have to go to your house first." next
-"@You're in yours hacking base!" next
-"@You could RUN from the aliens, nap in beds." wait
+"@Your house looks really similar to Ness' house in EarthBound..." next
+"@But you have to go to your house first." next
+"@You're in your hacking base!" next
+"@You could RUN from the aliens,[10 0F] and nap in your bed." wait
 window_closeall
 fullsave
 eob
