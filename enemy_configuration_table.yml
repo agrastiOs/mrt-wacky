@@ -7250,9 +7250,9 @@
   Action Order: 4
   Boss Flag: 'true'
   Death Sound: normal
-  Death Text Pointer: enemies.spider_encounter
+  Death Text Pointer: enemies.spider_defeat
   Defense: 1
-  Encounter Text Pointer: enemies.spider_defeat
+  Encounter Text Pointer: enemies.spider_encounter
   Experience points: 1
   Final Action: 0
   Final Action Argument: 0
