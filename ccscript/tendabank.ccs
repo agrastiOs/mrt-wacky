@@ -4,7 +4,7 @@ import useful
 tendabank:
 "@Hello,[10 0F] {get_name(1)}." next
 "@It's TendaBank!" next
-"@We can record everything about you,[10 0F][00]" next
+"@We can record everything about you,[10 0F][00]"
 "  and transact money to your credit card!" next
 "@TENDABAAANK IS AWESOME!" next
 "@You can also use your computer to transact money!" next

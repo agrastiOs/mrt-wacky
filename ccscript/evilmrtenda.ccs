@@ -9,7 +9,7 @@ char_direction(1,1)
 "@Shave?" linebreak
 menu {
 "Yes" : {"@You can't see a thing!" next
-"  Turn on the lights." end}
+"@Turn on the lights." end}
 "No" : {
 window_closeall
 eob
@@ -31,7 +31,7 @@ window_closeall
 eob
 
 beforet:
-if flag 8264 and flag 517 {
+if flag 8264{
 char_direction(1,1)
 "@Shave?" linebreak
 menu {
@@ -57,7 +57,7 @@ title(1,"Evil Mr. Tenda")
 "@Your wicked good looks have opened a rift between the Mirror Universe,[10 0F][00]"
 "  and your universe." next
 "@I am a replica of you." next
-"  However, now that I am in this world,[10 0F][00]"
+"@However, now that I am in this world,[10 0F][00]"
 "  there is no space for you to be here." next
 "@Tenda Soldier, battle him!" next
 title(1,"Tenda Soldier")
@@ -81,7 +81,7 @@ set(0x500)
 battle(481)
 set(0x154) set(8264) unset(8762) unset(749) set(6184)
 window_open(1)
-"@Looks like.|.|.you've bested me.." next
+"@Looks like.|.|.you've bested me... [10 0F] [00]" 
 "  for now.|.|." next window_closeall 
 hide_sprite(4,7)
 pause(120)
@@ -98,7 +98,7 @@ title(1,"Evil Mr. Tenda")
 battle(481)
 set(0x154) set(8264) unset(8762) unset(749) set(6184)
 window_open(1)
-"@Looks like.|.|.you've bested me.." next
+"@Looks like.|.|.you've bested me... [10 0F] [00]" 
 "  for now.|.|." next window_closeall 
 hide_sprite(4,7)
 pause(120)
