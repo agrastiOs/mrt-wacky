@@ -1,4 +1,4 @@
-C:/Users/agrastiOs/OneDrive/Dokumentai/Earthbound/Earthbound Tenda.smc
+C:/Users/Super/OneDrive/Dokumentai/Earthbound/Earthbound Tenda.smc
 CCScript Compilation Summary
 ============================
 
