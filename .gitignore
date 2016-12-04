@@ -18,7 +18,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Logs
-summary.txt
+ccscript/summary.txt
 
 # =========================
 # Operating System Files
