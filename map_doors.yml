@@ -1832,7 +1832,7 @@
     X: 17
     Y: 27
     Style: 7
-    Text Pointer: mrtendahouse.guest
+    Text Pointer: $0
     Direction: left
   - Type: door
     Destination X: 934

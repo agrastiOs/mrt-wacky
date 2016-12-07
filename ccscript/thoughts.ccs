@@ -2,15 +2,17 @@
 
 check:
 	window_open(1)
-	"{pause(60)}{window_open(1)}@Hey, we should check out the meteor first!" 
+	"{pause(60)}{window_open(1)}@Hey, you should check out the meteor first!" 
 	wait
 	window_closeall
 	eob
 	
 shave:
-	if not flag 0x154{
+	if not flag 0x154 and not flag 9008{
 	"{pause(60)}{window_open(1)}@You have to shave first!" next
-"@Your beard is gross!"
+"@Your beard is gross!" 
+next
+"@Go to the guestroom!"
       set (0x1000) set(9008)	
 wait
 	window_closeall
@@ -25,7 +27,7 @@ goto(shave2)
 	
 shave2:
 if not flag 0x154{
-		"{pause(60)}{window_open(1)}@I told you to shave, grossbeard!"
+		"{pause(60)}{window_open(1)}@Shave, grossbeard!"
 	wait
 		window_closeall
 		eob

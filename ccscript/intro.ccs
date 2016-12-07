@@ -13,33 +13,12 @@ hotspot_off(0xFF)
 
 init:
 "[1F E5 FF]"
+give(1,103) give(1,88) give(1,88) give(1,88) set(35) unset(11) set(21) toggle(95) toggle(199) pause(128)
 window_open(1)
-text_color(6)
-"@This intro is subject to change," next
-"@and this is a temporary fix." next
-"@So,| the meteor sound is not playing." next
-text_color(0)
-"@You're creating a hack." next give(1,103) give(1,88) give(1,88) give(1,88)
-"@You heard the meteorite." set(35) unset(11) set(21) toggle(95) toggle(199) pause(128) "[00]"
-"@Let's check it out,[10 0F] because you're a bit bored," next
-"@and very curious." next
-"@First,[10 0F] you need to go to your house and shave," next 
-"@before you check it out." next
-"@{get_name(1)} took" linebreak
-"  the {itemname(173)}." sound(SND_SPECIALITEM) give(1,173) next
-"@Also, you should get the pen in your house." next
-"@It's in the bottom-left corner of the room," next
-"@you can write or fight with it." next 
-"@Why would you need to fight?" next
-"@Because there could be some dangerous aliens from the meteor!" next
-"@Your house looks really similar to Ness' house in EarthBound..." next
-"@But you have to go to your house first." next
-"@You're in your hacking base!" next
-"@You could RUN from the aliens,[10 0F] and nap in your bed." next
-text_color(6)
-"@You might also think what's planned." next
-"@Instead of this text,| you will have just the meteor sound." next
-"@After that,| tenda NPCs will replace the purpose of the text." wait
+"@{get_name(1)} took" 
+linebreak
+"  the {itemname(173)}." 
+sound(SND_SPECIALITEM) give(1,173) wait
 window_closeall
 fullsave
 eob
@@ -755,8 +734,8 @@ flyover3mov (4186, 1615)
 
 //Intro string
 Intro:
+"[1F 05]"
 hide_party
-music_switching_off
 gen_sprite (106, 476, 1)		//Activates first flyover
 call (0xc9b4b8)
 warp (150)				//Warps to initial coordinates of flyover 2
@@ -769,7 +748,7 @@ set(749)
 set(2457)
 set(9255)
 show_party(1)
-music_switching_on
+"[1F 06]"
 warp (10)				//Warps to Ness's room
 char_direction(1,1)
 call(init)

@@ -2,7 +2,6 @@ import useful
 import charnames
 define pen_opened = flag 0x402
 define lights_on = flag 9000
-define guestroom = flag 9001
 import ebpp
 import ebpp_mem
 import ebpp_std
@@ -103,17 +102,6 @@ light2:
     }
 }
 
-guest:
-    if not guestroom {
-    window_open(0)
-    "@This is a room for guests."
-    wait
-    window_closeall
-    set(guestroom)
-    eob
-} else {
-    eob
-}
 mail:
     "@There's no mail here."
 wait
