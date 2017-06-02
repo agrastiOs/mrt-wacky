@@ -16,12 +16,12 @@ npc_639:
 "@Isn't this city beautiful?" next
 "@Oh, you look like a newcomer." next
 "@There are no tendas in this city." next
-"@How you did get in the city, though?" next
+"@How did you get in the city, though?" next
 "@Okay, I shouldn't have asked." next
-"@I'm retired Tax Collector." next
+"@I'm a retired Tax Collector." next
 "@I prefer old fashion." next
 "@Tax Collectors are very strict and take taxes." next
-"@They might beat you up as you're a first tenda here." next
+"@They might beat you up as you're the first tenda here." next
 "@Watch out!" end
 
 

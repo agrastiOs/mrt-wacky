@@ -10,7 +10,7 @@ window_open(1)
 "@The energy of the meteor energized you." sound(36)  heal_percent (1, 100) recoverpp_percent (1, 100) next 
 title(1,"Dr. Tilton Tenda")
 "@You want to get to this meteor,/ {get_name(1)}?" next
-"@I thought robots and those weird hackers could beat you,/ but you still got to me..." next
+"@I thought robots and these weird hackers could beat you,/ but you still got to me..." next
 "@You've always been better at hacking,/ and I hate you for that." next
 "@So I'll not let you get to this meteor for that!" next
 "@Stay away from it!" wait
@@ -28,7 +28,7 @@ title(1,"Dr. Tilton Tenda")
 "@I'll get my revenge on you!" next
 "@For now,/ goodbye!" next
 "@But wait!" next
-"@How I forgot this contraption?" next
+"@How did I forget this contraption?" next
 sound(0x49)
 window_closeall
 pause(120)    

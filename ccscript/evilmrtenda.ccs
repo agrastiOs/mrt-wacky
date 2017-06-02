@@ -54,11 +54,11 @@ set(8761) set(8762)
 warp(1)
 "[1F E5 FF]"
 title(1,"Evil Mr. Tenda")
-"@Your wicked good looks have opened a rift between the Mirror Universe,[10 0F][00]"
-"  and your universe." next
+"@Your wicked good looks have opened a rift between the Mirror Universe,[10 0F]" next
+"@and your universe." next
 "@I am a replica of you." next
-"@However, now that I am in this world,[10 0F][00]"
-"  there is no space for you to be here." next
+"@However, now that I am in this world,[10 0F]" next
+"@there is no space for you to be here." next
 "@Tenda Soldier, battle him!" next
 title(1,"Tenda Soldier")
 "@NO,[10 0F] you forced me to come here!" next
@@ -81,9 +81,9 @@ set(0x500)
 battle(481)
 set(0x154) set(8264) unset(8762) unset(749) set(6184)
 window_open(1)
-"@Looks like.|.|.you've bested me... [10 0F] [00]" 
-"  for now.|.|." next window_closeall 
-hide_sprite(4,7)
+"@Looks like.|.|.you've bested me... [10 0F]" next 
+"@for now.|.|." next window_closeall 
+hide_sprite(4,8)
 pause(120)
 window_open(1)
 "@You finished shaving." wait
@@ -98,9 +98,9 @@ title(1,"Evil Mr. Tenda")
 battle(481)
 set(0x154) set(8264) unset(8762) unset(749) set(6184)
 window_open(1)
-"@Looks like.|.|.you've bested me... [10 0F] [00]" 
-"  for now.|.|." next window_closeall 
-hide_sprite(4,7)
+"@Looks like.|.|.you've bested me... [10 0F]" next 
+"@for now.|.|." next window_closeall 
+hide_sprite(4,8)
 pause(120)
 window_open(1)
 "@You finished shaving." wait
@@ -123,9 +123,9 @@ set(0x500)
 battle(481)
 set(0x154) set(8264) unset(8762) unset(749) set(6184)
 window_open(1)
-"@Looks like.|.|.you've bested me.." next
-"  for now.|.|." next window_closeall 
-hide_sprite(4,7)
+"@Looks like.|.|.you've bested me... [10 0F]" next 
+"@for now.|.|." next window_closeall 
+hide_sprite(4,8)
 pause(120)
 window_open(1)
 "@You finished shaving." wait
@@ -140,9 +140,9 @@ title(1,"Evil Mr. Tenda")
 battle(481)
 set(0x154) set(8264) unset(8762) unset(749) set(6184)
 window_open(1)
-"@Looks like.|.|.you've bested me.." next
-"  for now.|.|." next window_closeall 
-hide_sprite(4,7)
+"@Looks like.|.|.you've bested me... [10 0F]" next 
+"@for now.|.|." next window_closeall 
+hide_sprite(4,8)
 pause(120)
 window_open(1)
 "@You finished shaving." wait

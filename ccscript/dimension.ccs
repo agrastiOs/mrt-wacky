@@ -116,7 +116,7 @@ surprise_lines(5)
 pause(60)
 window_open(1)
 title(1,"Tom")
-"@Huh? Where we are?" next
+"@Huh? Where are we?" next
 "@We gotta get out of here!" next
 "@Good I have my martial art skills." wait
 window_closeall
@@ -143,7 +143,7 @@ title(1,"Insane Killer")
 "@Let's play a game!" next
 "@I will tear your soul apart!" next
 "@And you try to defend like those other tendas!" next
-"@Wahahahahaha!" wait
+"@Wa|hahahahaha!" wait
 battle(483) 
 window_open(1)
 title(1,"Insane Killer")
@@ -151,7 +151,7 @@ title(1,"Insane Killer")
 "@I'm sick of this." next
 "@Bye." wait
 set(7146)
-hide_sprite(1535,6)
+hide_sprite(1535,8)
 fullsave
 eob
 

@@ -4,9 +4,9 @@ import useful
 tendabank:
 "@Hello,[10 0F] {get_name(1)}." next
 "@It's TendaBank!" next
-"@We can record everything about you,[10 0F][00]"
-"  and transact money to your credit card!" next
-"@TENDABAAANK IS AWESOME!" next
+"@We can record everything about you,[10 0F]" next
+"@and transact money to your credit card!" next
+"@TENDABA/A/ANK IS AWESOME!" next
 "@You can also use your computer to transact money!" next
 "@You should have{open_wallet} ${stat(7)} on TendaBank." next 
 "@What do you want to do?" newline
@@ -21,7 +21,7 @@ eob
 {call(0xC62D30)}
 }
 default "Nothing":{
-"@OK then,[10 0F]| goodbye!" wait
+"@Okay then,[10 0F]| goodbye!" wait
 eob
 }
 }
