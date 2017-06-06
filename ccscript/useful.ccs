@@ -5,8 +5,10 @@ import actions
 
 define AGAINSTSPINNINGROBO = music(97)
 define AGAINSTTENDA = music(103)
+define BOSS = music(0x86)
 
-    
+    command spawnpoint "[1B 06][19 26 00]"
+	
     command inst_pack_loc (target) "[{byte[2] target} {byte[0] target} {byte[1] target}]"
 	
 	command surprise_lines (char) {"[1F 1C {byte char} 01][10 3C][1F 1D {byte char}]"}

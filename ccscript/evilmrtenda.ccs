@@ -53,6 +53,7 @@ set(8761) set(8762)
 "@Let's shave![10 3F] Wait a minute..." next
 warp(1)
 "[1F E5 FF]"
+BOSS
 title(1,"Evil Mr. Tenda")
 "@Your wicked good looks have opened a rift between the Mirror Universe,[10 0F]" next
 "@and your universe." next

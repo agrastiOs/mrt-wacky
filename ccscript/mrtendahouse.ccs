@@ -118,13 +118,16 @@ next
 next
 	"@Seems like you also ripped some spider web,[10 0F] which was stuck to the paper."
 next
+sound(0x1A)
 pause(60)
+BOSS
 title(1,"Mr. Spider")
-	"@Excuse me, kind sir,[10 0F][00]"
-	"  but you just obliterated my humble home."
+	"@Excuse me, kind sir,[10 0F]" next
+	"@but you just obliterated my humble home."
 next
-	"@This means that we will have to settle this,[10 0F][00]"
-	"  with a duel."
+	"@This means that we will have to settle this,[10 0F]"
+next
+	"@with a duel." 
 next
 	"@Sir,[10 0F] do you have a weapon?"
 next
@@ -139,12 +142,14 @@ end
 	"@The power has been turned on." 
 end}
 	if flag 982 and if flag 979{
+	BOSS
 title(1,"Mr. Spider")
-	"@Excuse me,[10 0F] kind sir,[10 0F][00]"
-	"  but you just obliterated my humble home."
+"@Excuse me, kind sir,[10 0F]" next
+	"@but you just obliterated my humble home."
 next
-	"@This means that we will have to settle this,[10 0F][00]"
-	"  with a duel."
+	"@This means that we will have to settle this,[10 0F]"
+next
+	"@with a duel." 
 wait
 battle(10)
 window_open(1)
@@ -171,13 +176,16 @@ next
 next
 	"@Seems like you also ripped some spider web,[10 0F] which was stuck to the paper."
 next
+sound(0x1A)
 pause(60)
+BOSS
 title(1,"Mr. Spider")
-	"@Excuse me,[10 0F] kind sir,[10 0F][00]"
-	"  but you just obliterated my humble home."
+"@Excuse me, kind sir,[10 0F]" next
+	"@but you just obliterated my humble home."
 next
-	"@This means that we will have to settle this,[10 0F][00]"
-	"  with a duel."
+	"@This means that we will have to settle this,[10 0F]"
+next
+	"@with a duel." 
 wait
 battle(10)
 window_open(1)
