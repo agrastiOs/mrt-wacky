@@ -121,6 +121,7 @@ resources:
     Logos/ProducedBy: Logos/ProducedBy.png, TownMaps/Fourside: TownMaps/Fourside.png,
     TownMaps/Onett: TownMaps/Onett.png, TownMaps/Scaraba: TownMaps/Scaraba.png, TownMaps/Summers: TownMaps/Summers.png,
     TownMaps/Threed: TownMaps/Threed.png, TownMaps/Twoson: TownMaps/Twoson.png, TownMaps/icons: TownMaps/icons.png}
+  eb.DeathScreenModule: {Logos/DeathScreen: Logos/DeathScreen.png, Logos/DeathScreen_palettes: Logos/DeathScreen_palettes.yml}
   eb.DoorModule: {map_doors: map_doors.yml}
   eb.EnemyModule: {BattleSprites/001: BattleSprites/001.png, BattleSprites/002: BattleSprites/002.png,
     BattleSprites/003: BattleSprites/003.png, BattleSprites/004: BattleSprites/004.png,
@@ -535,6 +536,32 @@ resources:
     Tilesets/12: Tilesets/12.fts, Tilesets/13: Tilesets/13.fts, Tilesets/14: Tilesets/14.fts,
     Tilesets/15: Tilesets/15.fts, Tilesets/16: Tilesets/16.fts, Tilesets/17: Tilesets/17.fts,
     Tilesets/18: Tilesets/18.fts, Tilesets/19: Tilesets/19.fts, map_palette_settings: map_palette_settings.yml}
+  eb.TitleScreenModule: {TitleScreen/Background/00: TitleScreen/Background/00.png,
+    TitleScreen/Background/01: TitleScreen/Background/01.png, TitleScreen/Background/02: TitleScreen/Background/02.png,
+    TitleScreen/Background/03: TitleScreen/Background/03.png, TitleScreen/Background/04: TitleScreen/Background/04.png,
+    TitleScreen/Background/05: TitleScreen/Background/05.png, TitleScreen/Background/06: TitleScreen/Background/06.png,
+    TitleScreen/Background/07: TitleScreen/Background/07.png, TitleScreen/Background/08: TitleScreen/Background/08.png,
+    TitleScreen/Background/09: TitleScreen/Background/09.png, TitleScreen/Background/10: TitleScreen/Background/10.png,
+    TitleScreen/Background/11: TitleScreen/Background/11.png, TitleScreen/Background/12: TitleScreen/Background/12.png,
+    TitleScreen/Background/13: TitleScreen/Background/13.png, TitleScreen/Background/14: TitleScreen/Background/14.png,
+    TitleScreen/Background/15: TitleScreen/Background/15.png, TitleScreen/Background/16: TitleScreen/Background/16.png,
+    TitleScreen/Background/17: TitleScreen/Background/17.png, TitleScreen/Background/18: TitleScreen/Background/18.png,
+    TitleScreen/Background/19: TitleScreen/Background/19.png, TitleScreen/Background/20: TitleScreen/Background/20.png,
+    TitleScreen/Background/21: TitleScreen/Background/21.png, TitleScreen/Background/22: TitleScreen/Background/22.png,
+    TitleScreen/Background/23: TitleScreen/Background/23.png, TitleScreen/Background/24: TitleScreen/Background/24.png,
+    TitleScreen/Background/25: TitleScreen/Background/25.png, TitleScreen/Background/26: TitleScreen/Background/26.png,
+    TitleScreen/Background/27: TitleScreen/Background/27.png, TitleScreen/Background/28: TitleScreen/Background/28.png,
+    TitleScreen/Background/29: TitleScreen/Background/29.png, TitleScreen/Background/30: TitleScreen/Background/30.png,
+    TitleScreen/Background/31: TitleScreen/Background/31.png, TitleScreen/Background/32: TitleScreen/Background/32.png,
+    TitleScreen/Background/33: TitleScreen/Background/33.png, TitleScreen/Background/Reference: TitleScreen/Background/Reference.png,
+    TitleScreen/Chars/00: TitleScreen/Chars/00.png, TitleScreen/Chars/01: TitleScreen/Chars/01.png,
+    TitleScreen/Chars/02: TitleScreen/Chars/02.png, TitleScreen/Chars/03: TitleScreen/Chars/03.png,
+    TitleScreen/Chars/04: TitleScreen/Chars/04.png, TitleScreen/Chars/05: TitleScreen/Chars/05.png,
+    TitleScreen/Chars/06: TitleScreen/Chars/06.png, TitleScreen/Chars/07: TitleScreen/Chars/07.png,
+    TitleScreen/Chars/08: TitleScreen/Chars/08.png, TitleScreen/Chars/09: TitleScreen/Chars/09.png,
+    TitleScreen/Chars/10: TitleScreen/Chars/10.png, TitleScreen/Chars/11: TitleScreen/Chars/11.png,
+    TitleScreen/Chars/12: TitleScreen/Chars/12.png, TitleScreen/Chars/13: TitleScreen/Chars/13.png,
+    TitleScreen/Chars/Initial: TitleScreen/Chars/Initial.png, TitleScreen/Chars/positions: TitleScreen/Chars/positions.yml}
   eb.TownMapIconModule: {TownMaps/icon_positions: TownMaps/icon_positions.yml}
   eb.WindowGraphicsModule: {WindowGraphics/Windows1_0: WindowGraphics/Windows1_0.png,
     WindowGraphics/Windows1_1: WindowGraphics/Windows1_1.png, WindowGraphics/Windows1_2: WindowGraphics/Windows1_2.png,
@@ -545,7 +572,4 @@ resources:
     WindowGraphics/Windows2_4: WindowGraphics/Windows2_4.png, WindowGraphics/Windows2_5: WindowGraphics/Windows2_5.png,
     WindowGraphics/Windows2_6: WindowGraphics/Windows2_6.png, WindowGraphics/flavor_names: WindowGraphics/flavor_names.txt}
 romtype: Earthbound
-version: 8
-Title: Untitled
-Author: Anonymous
-Description: No Description
+version: 9
