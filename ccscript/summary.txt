@@ -6,8 +6,8 @@ CCScript Compilation Summary
 Compilation statistics
 =================================================================
 Compilation start:           $f10000
-Compilation end:             $f8fcb4
-Total compiled size:         523444 bytes
+Compilation end:             $f8fcb8
+Total compiled size:         523448 bytes
 Fragmented space:            195 bytes
 -----------------------------------------------------------------
 
@@ -16,13 +16,13 @@ Module information
 =================================================================
 Name                         Address     Size
 -----------------------------------------------------------------
-actions                      $f8e55a      1038   bytes
+actions                      $f8e55e      1038   bytes
 asm65816                     $f1fff4      0      bytes
 ASMRef                       $f1fff4      0      bytes
 asm_run                      $f1fff4      0      bytes
 BattleNumbers                $f1fff4      0      bytes
-BattleScripts                $f8e0fe      1116   bytes
-bed                          $f8fb05      238    bytes
+BattleScripts                $f8e102      1116   bytes
+bed                          $f8fb09      238    bytes
 charnames                    $f2ffb7      42     bytes
 computer                     $f4ff73      141    bytes
 data_00                      $f1d553      10840  bytes
@@ -92,28 +92,28 @@ data_63                      $f84f62      3280   bytes
 data_64                      $f87520      3136   bytes
 data_65                      $f7e5bb      5014   bytes
 data_66                      $f88160      3025   bytes
-dimension                    $f8d6e8      1319   bytes
+dimension                    $f8d6e8      1323   bytes
 ebpp                         $f1fff4      0      bytes
 EBPP_Disassembly             $f868c7      3161   bytes
-ebpp_mem                     $f8ed70      957    bytes
+ebpp_mem                     $f8ed74      957    bytes
 ebpp_std                     $f7ff84      109    bytes
-enemies                      $f8fbf3      104    bytes
+enemies                      $f8fbf7      104    bytes
 evilmrtenda                  $f8b726      2203   bytes
-example_store                $f8dc0f      1263   bytes
-hotel                        $f8fc5b      89     bytes
+example_store                $f8dc13      1263   bytes
+hotel                        $f8fc5f      89     bytes
 intro                        $f7f951      1587   bytes
 items                        $f5ff3d      154    bytes
 main                         $f1fff4      0      bytes
-meteor                       $f8f4a9      601    bytes
+meteor                       $f8f4ad      601    bytes
 movement                     $f1fff4      0      bytes
 mrtendahouse                 $f8adc7      2399   bytes
-pkboundcity                  $f8f12d      892    bytes
+pkboundcity                  $f8f131      892    bytes
 spritemovement               $f1fff4      0      bytes
-tendabank                    $f8f702      417    bytes
+tendabank                    $f8f706      417    bytes
 tendashop                    $f8c7d8      1959   bytes
-thoughts                     $f8fa0d      248    bytes
-tiltontenda                  $f8e968      1032   bytes
-twoson                       $f8f8a3      362    bytes
+thoughts                     $f8fa11      248    bytes
+tiltontenda                  $f8e96c      1032   bytes
+twoson                       $f8f8a7      362    bytes
 useful                       $f1ffab      73     bytes
 stdarg                       $f1fff4      0      bytes
 std                          $f1fff4      0      bytes
@@ -126,26 +126,26 @@ Label locations
 Labels in module actions
 Name                         Address
 -----------------------------------------------------------------
-Grownup_Antics               $f8e57a
-explosive                    $f8e58c
-hackerplaying                $f8e55a
-inkbottle                    $f8e871
-inkbottleCode                $f8e8a6
-laser                        $f8e5eb
-ray                          $f8e5b7
-sandwich                     $f8e620
-sandwichcode                 $f8e6ca
-spider1                      $f8e785
-spider2                      $f8e7c7
-spider21                     $f8e7d4
-spider22                     $f8e7f7
-spider3                      $f8e813
-spider31                     $f8e820
-spider32                     $f8e846
-spirit1                      $f8e6d4
-spirit2                      $f8e703
-spirit3                      $f8e71b
-spirit4                      $f8e735
+Grownup_Antics               $f8e57e
+explosive                    $f8e590
+hackerplaying                $f8e55e
+inkbottle                    $f8e875
+inkbottleCode                $f8e8aa
+laser                        $f8e5ef
+ray                          $f8e5bb
+sandwich                     $f8e624
+sandwichcode                 $f8e6ce
+spider1                      $f8e789
+spider2                      $f8e7cb
+spider21                     $f8e7d8
+spider22                     $f8e7fb
+spider3                      $f8e817
+spider31                     $f8e824
+spider32                     $f8e84a
+spirit1                      $f8e6d8
+spirit2                      $f8e707
+spirit3                      $f8e71f
+spirit4                      $f8e739
 -----------------------------------------------------------------
 
 
@@ -176,259 +176,259 @@ Name                         Address
 Labels in module BattleScripts
 Name                         Address
 -----------------------------------------------------------------
-BattleScript_0               $f8e0fe
-BattleScript_1               $f8e0fe
-BattleScript_10              $f8e0fe
-BattleScript_100             $f8e0fe
-BattleScript_101             $f8e0fe
-BattleScript_102             $f8e0fe
-BattleScript_103             $f8e0fe
-BattleScript_104             $f8e0fe
-BattleScript_105             $f8e0fe
-BattleScript_106             $f8e0fe
-BattleScript_107             $f8e0fe
-BattleScript_108             $f8e0fe
-BattleScript_109             $f8e0fe
-BattleScript_11              $f8e0fe
-BattleScript_110             $f8e0fe
-BattleScript_111             $f8e0fe
-BattleScript_112             $f8e0fe
-BattleScript_113             $f8e0fe
-BattleScript_114             $f8e0fe
-BattleScript_115             $f8e0fe
-BattleScript_116             $f8e0fe
-BattleScript_117             $f8e0fe
-BattleScript_118             $f8e0fe
-BattleScript_119             $f8e0fe
-BattleScript_12              $f8e0fe
-BattleScript_120             $f8e0fe
-BattleScript_121             $f8e0fe
-BattleScript_122             $f8e0fe
-BattleScript_123             $f8e0fe
-BattleScript_124             $f8e0fe
-BattleScript_125             $f8e0fe
-BattleScript_126             $f8e0fe
-BattleScript_127             $f8e0fe
-BattleScript_128             $f8e0fe
-BattleScript_129             $f8e0fe
-BattleScript_13              $f8e0fe
-BattleScript_130             $f8e0fe
-BattleScript_131             $f8e0fe
-BattleScript_132             $f8e0fe
-BattleScript_133             $f8e0fe
-BattleScript_134             $f8e0fe
-BattleScript_135             $f8e0fe
-BattleScript_136             $f8e0fe
-BattleScript_137             $f8e0fe
-BattleScript_138             $f8e0fe
-BattleScript_139             $f8e0fe
-BattleScript_14              $f8e0fe
-BattleScript_140             $f8e0fe
-BattleScript_141             $f8e0fe
-BattleScript_142             $f8e0fe
-BattleScript_143             $f8e0fe
-BattleScript_144             $f8e0fe
-BattleScript_145             $f8e0fe
-BattleScript_146             $f8e0fe
-BattleScript_147             $f8e0fe
-BattleScript_148             $f8e0fe
-BattleScript_149             $f8e0fe
-BattleScript_15              $f8e0fe
-BattleScript_150             $f8e0fe
-BattleScript_151             $f8e0fe
-BattleScript_152             $f8e0fe
-BattleScript_153             $f8e0fe
-BattleScript_154             $f8e0fe
-BattleScript_155             $f8e10e
-BattleScript_156             $f8e10e
-BattleScript_157             $f8e10e
-BattleScript_158             $f8e10e
-BattleScript_159             $f8e10e
-BattleScript_16              $f8e0fe
-BattleScript_160             $f8e10e
-BattleScript_161             $f8e10e
-BattleScript_162             $f8e10e
-BattleScript_163             $f8e10e
-BattleScript_164             $f8e10e
-BattleScript_165             $f8e10e
-BattleScript_166             $f8e10e
-BattleScript_167             $f8e10e
-BattleScript_168             $f8e10e
-BattleScript_169             $f8e10e
-BattleScript_17              $f8e0fe
-BattleScript_170             $f8e10e
-BattleScript_171             $f8e10e
-BattleScript_172             $f8e10e
-BattleScript_173             $f8e10e
-BattleScript_174             $f8e10e
-BattleScript_175             $f8e10e
-BattleScript_176             $f8e10e
-BattleScript_177             $f8e10e
-BattleScript_178             $f8e10e
-BattleScript_179             $f8e10e
-BattleScript_18              $f8e0fe
-BattleScript_180             $f8e10e
-BattleScript_181             $f8e10e
-BattleScript_182             $f8e10e
-BattleScript_183             $f8e10e
-BattleScript_184             $f8e10e
-BattleScript_185             $f8e10e
-BattleScript_186             $f8e10e
-BattleScript_187             $f8e10e
-BattleScript_188             $f8e10e
-BattleScript_189             $f8e10e
-BattleScript_19              $f8e0fe
-BattleScript_190             $f8e10e
-BattleScript_191             $f8e10e
-BattleScript_192             $f8e10e
-BattleScript_193             $f8e10e
-BattleScript_194             $f8e10e
-BattleScript_195             $f8e10e
-BattleScript_196             $f8e10e
-BattleScript_197             $f8e10e
-BattleScript_198             $f8e10e
-BattleScript_199             $f8e10e
-BattleScript_2               $f8e0fe
-BattleScript_20              $f8e0fe
-BattleScript_200             $f8e10e
-BattleScript_201             $f8e10e
-BattleScript_202             $f8e10e
-BattleScript_203             $f8e10e
-BattleScript_204             $f8e10e
-BattleScript_205             $f8e10e
-BattleScript_206             $f8e10e
-BattleScript_207             $f8e10e
-BattleScript_208             $f8e10e
-BattleScript_209             $f8e10e
-BattleScript_21              $f8e0fe
-BattleScript_210             $f8e10e
-BattleScript_211             $f8e10e
-BattleScript_212             $f8e10e
-BattleScript_213             $f8e10e
-BattleScript_214             $f8e10e
-BattleScript_215             $f8e10e
-BattleScript_216             $f8e10e
-BattleScript_217             $f8e10e
-BattleScript_218             $f8e10e
-BattleScript_219             $f8e10e
-BattleScript_22              $f8e0fe
-BattleScript_220             $f8e10e
-BattleScript_221             $f8e10e
-BattleScript_222             $f8e10e
-BattleScript_223             $f8e10e
-BattleScript_224             $f8e10e
-BattleScript_225             $f8e10e
-BattleScript_226             $f8e10e
-BattleScript_227             $f8e10e
-BattleScript_228             $f8e10e
-BattleScript_229             $f8e10e
-BattleScript_23              $f8e0fe
-BattleScript_230             $f8e10e
-BattleScript_24              $f8e0fe
-BattleScript_25              $f8e0fe
-BattleScript_26              $f8e0fe
-BattleScript_27              $f8e0fe
-BattleScript_28              $f8e0fe
-BattleScript_29              $f8e0fe
-BattleScript_3               $f8e0fe
-BattleScript_30              $f8e0fe
-BattleScript_31              $f8e0fe
-BattleScript_32              $f8e0fe
-BattleScript_33              $f8e0fe
-BattleScript_34              $f8e0fe
-BattleScript_35              $f8e0fe
-BattleScript_36              $f8e0fe
-BattleScript_37              $f8e0fe
-BattleScript_38              $f8e0fe
-BattleScript_39              $f8e0fe
-BattleScript_4               $f8e0fe
-BattleScript_40              $f8e0fe
-BattleScript_41              $f8e0fe
-BattleScript_42              $f8e0fe
-BattleScript_43              $f8e0fe
-BattleScript_44              $f8e0fe
-BattleScript_45              $f8e0fe
-BattleScript_46              $f8e0fe
-BattleScript_47              $f8e0fe
-BattleScript_48              $f8e0fe
-BattleScript_49              $f8e0fe
-BattleScript_5               $f8e0fe
-BattleScript_50              $f8e0fe
-BattleScript_51              $f8e0fe
-BattleScript_52              $f8e0fe
-BattleScript_53              $f8e0fe
-BattleScript_54              $f8e0fe
-BattleScript_55              $f8e0fe
-BattleScript_56              $f8e0fe
-BattleScript_57              $f8e0fe
-BattleScript_58              $f8e0fe
-BattleScript_59              $f8e0fe
-BattleScript_6               $f8e0fe
-BattleScript_60              $f8e0fe
-BattleScript_61              $f8e0fe
-BattleScript_62              $f8e0fe
-BattleScript_63              $f8e0fe
-BattleScript_64              $f8e0fe
-BattleScript_65              $f8e0fe
-BattleScript_66              $f8e0fe
-BattleScript_67              $f8e0fe
-BattleScript_68              $f8e0fe
-BattleScript_69              $f8e0fe
-BattleScript_7               $f8e0fe
-BattleScript_70              $f8e0fe
-BattleScript_71              $f8e0fe
-BattleScript_72              $f8e0fe
-BattleScript_73              $f8e0fe
-BattleScript_74              $f8e0fe
-BattleScript_75              $f8e0fe
-BattleScript_76              $f8e0fe
-BattleScript_77              $f8e0fe
-BattleScript_78              $f8e0fe
-BattleScript_79              $f8e0fe
-BattleScript_8               $f8e0fe
-BattleScript_80              $f8e0fe
-BattleScript_81              $f8e0fe
-BattleScript_82              $f8e0fe
-BattleScript_83              $f8e0fe
-BattleScript_84              $f8e0fe
-BattleScript_85              $f8e0fe
-BattleScript_86              $f8e0fe
-BattleScript_87              $f8e0fe
-BattleScript_88              $f8e0fe
-BattleScript_89              $f8e0fe
-BattleScript_9               $f8e0fe
-BattleScript_90              $f8e0fe
-BattleScript_91              $f8e0fe
-BattleScript_92              $f8e0fe
-BattleScript_93              $f8e0fe
-BattleScript_94              $f8e0fe
-BattleScript_95              $f8e0fe
-BattleScript_96              $f8e0fe
-BattleScript_97              $f8e0fe
-BattleScript_98              $f8e0fe
-BattleScript_99              $f8e0fe
-BattleScript_Table           $f8e12b
-BattleScripts_CommandTable   $f8e467
-BattleScripts_ConditionalBranch_End $f8e54b
-BattleScripts_ConditionalBranch_IfUnderStatus $f8e512
-BattleScripts_ConditionalBranch_LessThanCurrentHP $f8e4e4
-BattleScripts_ConditionalBranch_LessThanCurrentPP $f8e4fb
-BattleScripts_ConditionalBranch_LoadBranchLength $f8e536
-BattleScripts_ConditionalBranch_Random $f8e4ca
-BattleScripts_EndScript      $f8e4bd
-BattleScripts_Hijack         $f8e3e3
-BattleScripts_Main           $f8e411
-BattleScripts_Main2          $f8e435
-BattleScripts_Main3          $f8e459
-BattleScripts_RandomAction   $f8e475
+BattleScript_0               $f8e102
+BattleScript_1               $f8e102
+BattleScript_10              $f8e102
+BattleScript_100             $f8e102
+BattleScript_101             $f8e102
+BattleScript_102             $f8e102
+BattleScript_103             $f8e102
+BattleScript_104             $f8e102
+BattleScript_105             $f8e102
+BattleScript_106             $f8e102
+BattleScript_107             $f8e102
+BattleScript_108             $f8e102
+BattleScript_109             $f8e102
+BattleScript_11              $f8e102
+BattleScript_110             $f8e102
+BattleScript_111             $f8e102
+BattleScript_112             $f8e102
+BattleScript_113             $f8e102
+BattleScript_114             $f8e102
+BattleScript_115             $f8e102
+BattleScript_116             $f8e102
+BattleScript_117             $f8e102
+BattleScript_118             $f8e102
+BattleScript_119             $f8e102
+BattleScript_12              $f8e102
+BattleScript_120             $f8e102
+BattleScript_121             $f8e102
+BattleScript_122             $f8e102
+BattleScript_123             $f8e102
+BattleScript_124             $f8e102
+BattleScript_125             $f8e102
+BattleScript_126             $f8e102
+BattleScript_127             $f8e102
+BattleScript_128             $f8e102
+BattleScript_129             $f8e102
+BattleScript_13              $f8e102
+BattleScript_130             $f8e102
+BattleScript_131             $f8e102
+BattleScript_132             $f8e102
+BattleScript_133             $f8e102
+BattleScript_134             $f8e102
+BattleScript_135             $f8e102
+BattleScript_136             $f8e102
+BattleScript_137             $f8e102
+BattleScript_138             $f8e102
+BattleScript_139             $f8e102
+BattleScript_14              $f8e102
+BattleScript_140             $f8e102
+BattleScript_141             $f8e102
+BattleScript_142             $f8e102
+BattleScript_143             $f8e102
+BattleScript_144             $f8e102
+BattleScript_145             $f8e102
+BattleScript_146             $f8e102
+BattleScript_147             $f8e102
+BattleScript_148             $f8e102
+BattleScript_149             $f8e102
+BattleScript_15              $f8e102
+BattleScript_150             $f8e102
+BattleScript_151             $f8e102
+BattleScript_152             $f8e102
+BattleScript_153             $f8e102
+BattleScript_154             $f8e102
+BattleScript_155             $f8e112
+BattleScript_156             $f8e112
+BattleScript_157             $f8e112
+BattleScript_158             $f8e112
+BattleScript_159             $f8e112
+BattleScript_16              $f8e102
+BattleScript_160             $f8e112
+BattleScript_161             $f8e112
+BattleScript_162             $f8e112
+BattleScript_163             $f8e112
+BattleScript_164             $f8e112
+BattleScript_165             $f8e112
+BattleScript_166             $f8e112
+BattleScript_167             $f8e112
+BattleScript_168             $f8e112
+BattleScript_169             $f8e112
+BattleScript_17              $f8e102
+BattleScript_170             $f8e112
+BattleScript_171             $f8e112
+BattleScript_172             $f8e112
+BattleScript_173             $f8e112
+BattleScript_174             $f8e112
+BattleScript_175             $f8e112
+BattleScript_176             $f8e112
+BattleScript_177             $f8e112
+BattleScript_178             $f8e112
+BattleScript_179             $f8e112
+BattleScript_18              $f8e102
+BattleScript_180             $f8e112
+BattleScript_181             $f8e112
+BattleScript_182             $f8e112
+BattleScript_183             $f8e112
+BattleScript_184             $f8e112
+BattleScript_185             $f8e112
+BattleScript_186             $f8e112
+BattleScript_187             $f8e112
+BattleScript_188             $f8e112
+BattleScript_189             $f8e112
+BattleScript_19              $f8e102
+BattleScript_190             $f8e112
+BattleScript_191             $f8e112
+BattleScript_192             $f8e112
+BattleScript_193             $f8e112
+BattleScript_194             $f8e112
+BattleScript_195             $f8e112
+BattleScript_196             $f8e112
+BattleScript_197             $f8e112
+BattleScript_198             $f8e112
+BattleScript_199             $f8e112
+BattleScript_2               $f8e102
+BattleScript_20              $f8e102
+BattleScript_200             $f8e112
+BattleScript_201             $f8e112
+BattleScript_202             $f8e112
+BattleScript_203             $f8e112
+BattleScript_204             $f8e112
+BattleScript_205             $f8e112
+BattleScript_206             $f8e112
+BattleScript_207             $f8e112
+BattleScript_208             $f8e112
+BattleScript_209             $f8e112
+BattleScript_21              $f8e102
+BattleScript_210             $f8e112
+BattleScript_211             $f8e112
+BattleScript_212             $f8e112
+BattleScript_213             $f8e112
+BattleScript_214             $f8e112
+BattleScript_215             $f8e112
+BattleScript_216             $f8e112
+BattleScript_217             $f8e112
+BattleScript_218             $f8e112
+BattleScript_219             $f8e112
+BattleScript_22              $f8e102
+BattleScript_220             $f8e112
+BattleScript_221             $f8e112
+BattleScript_222             $f8e112
+BattleScript_223             $f8e112
+BattleScript_224             $f8e112
+BattleScript_225             $f8e112
+BattleScript_226             $f8e112
+BattleScript_227             $f8e112
+BattleScript_228             $f8e112
+BattleScript_229             $f8e112
+BattleScript_23              $f8e102
+BattleScript_230             $f8e112
+BattleScript_24              $f8e102
+BattleScript_25              $f8e102
+BattleScript_26              $f8e102
+BattleScript_27              $f8e102
+BattleScript_28              $f8e102
+BattleScript_29              $f8e102
+BattleScript_3               $f8e102
+BattleScript_30              $f8e102
+BattleScript_31              $f8e102
+BattleScript_32              $f8e102
+BattleScript_33              $f8e102
+BattleScript_34              $f8e102
+BattleScript_35              $f8e102
+BattleScript_36              $f8e102
+BattleScript_37              $f8e102
+BattleScript_38              $f8e102
+BattleScript_39              $f8e102
+BattleScript_4               $f8e102
+BattleScript_40              $f8e102
+BattleScript_41              $f8e102
+BattleScript_42              $f8e102
+BattleScript_43              $f8e102
+BattleScript_44              $f8e102
+BattleScript_45              $f8e102
+BattleScript_46              $f8e102
+BattleScript_47              $f8e102
+BattleScript_48              $f8e102
+BattleScript_49              $f8e102
+BattleScript_5               $f8e102
+BattleScript_50              $f8e102
+BattleScript_51              $f8e102
+BattleScript_52              $f8e102
+BattleScript_53              $f8e102
+BattleScript_54              $f8e102
+BattleScript_55              $f8e102
+BattleScript_56              $f8e102
+BattleScript_57              $f8e102
+BattleScript_58              $f8e102
+BattleScript_59              $f8e102
+BattleScript_6               $f8e102
+BattleScript_60              $f8e102
+BattleScript_61              $f8e102
+BattleScript_62              $f8e102
+BattleScript_63              $f8e102
+BattleScript_64              $f8e102
+BattleScript_65              $f8e102
+BattleScript_66              $f8e102
+BattleScript_67              $f8e102
+BattleScript_68              $f8e102
+BattleScript_69              $f8e102
+BattleScript_7               $f8e102
+BattleScript_70              $f8e102
+BattleScript_71              $f8e102
+BattleScript_72              $f8e102
+BattleScript_73              $f8e102
+BattleScript_74              $f8e102
+BattleScript_75              $f8e102
+BattleScript_76              $f8e102
+BattleScript_77              $f8e102
+BattleScript_78              $f8e102
+BattleScript_79              $f8e102
+BattleScript_8               $f8e102
+BattleScript_80              $f8e102
+BattleScript_81              $f8e102
+BattleScript_82              $f8e102
+BattleScript_83              $f8e102
+BattleScript_84              $f8e102
+BattleScript_85              $f8e102
+BattleScript_86              $f8e102
+BattleScript_87              $f8e102
+BattleScript_88              $f8e102
+BattleScript_89              $f8e102
+BattleScript_9               $f8e102
+BattleScript_90              $f8e102
+BattleScript_91              $f8e102
+BattleScript_92              $f8e102
+BattleScript_93              $f8e102
+BattleScript_94              $f8e102
+BattleScript_95              $f8e102
+BattleScript_96              $f8e102
+BattleScript_97              $f8e102
+BattleScript_98              $f8e102
+BattleScript_99              $f8e102
+BattleScript_Table           $f8e12f
+BattleScripts_CommandTable   $f8e46b
+BattleScripts_ConditionalBranch_End $f8e54f
+BattleScripts_ConditionalBranch_IfUnderStatus $f8e516
+BattleScripts_ConditionalBranch_LessThanCurrentHP $f8e4e8
+BattleScripts_ConditionalBranch_LessThanCurrentPP $f8e4ff
+BattleScripts_ConditionalBranch_LoadBranchLength $f8e53a
+BattleScripts_ConditionalBranch_Random $f8e4ce
+BattleScripts_EndScript      $f8e4c1
+BattleScripts_Hijack         $f8e3e7
+BattleScripts_Main           $f8e415
+BattleScripts_Main2          $f8e439
+BattleScripts_Main3          $f8e45d
+BattleScripts_RandomAction   $f8e479
 -----------------------------------------------------------------
 
 
 Labels in module bed
 Name                         Address
 -----------------------------------------------------------------
-nap_bed1                     $f8fb05
-nap_bed2                     $f8fb7c
+nap_bed1                     $f8fb09
+nap_bed2                     $f8fb80
 -----------------------------------------------------------------
 
 
@@ -7407,17 +7407,17 @@ Location13                   $f8d8b3
 Location133                  $f8d90f
 Location2                    $f8d831
 Location3                    $f8d850
-boss                         $f8da95
+boss                         $f8da99
 fullscroll                   $f8d92c
-locked                       $f8da6b
+locked                       $f8da6f
 phone                        $f8d9ab
 scroll                       $f8d6e8
 scroll2                      $f8d7e2
 scroll3                      $f8d7f8
 scrollhelp                   $f8d972
-tom                          $f8d9bf
-tophat                       $f8dbcc
-warpcity                     $f8da86
+tom                          $f8d9c3
+tophat                       $f8dbd0
+warpcity                     $f8da8a
 -----------------------------------------------------------------
 
 
@@ -7587,9 +7587,9 @@ Name                         Address
 Labels in module enemies
 Name                         Address
 -----------------------------------------------------------------
-hackersencounter             $f8fbf3
-spider_defeat                $f8fc47
-spider_encounter             $f8fc2f
+hackersencounter             $f8fbf7
+spider_defeat                $f8fc4b
+spider_encounter             $f8fc33
 -----------------------------------------------------------------
 
 
@@ -7609,33 +7609,33 @@ t                            $f8b868
 Labels in module example_store
 Name                         Address
 -----------------------------------------------------------------
-Example_Store                $f8dc0f
-Example_Store_Again          $f8df5a
-Example_Store_Another        $f8dd57
-Example_Store_Broke          $f8deb8
-Example_Store_Buy            $f8dcdc
-Example_Store_Buy_Cancel     $f8de9f
-Example_Store_Buy_Continue   $f8dd63
-Example_Store_Buy_Party      $f8de72
-Example_Store_Buy_User_Full  $f8ddf5
-Example_Store_Cant_Equip     $f8dd88
-Example_Store_Cant_Sell      $f8e0bf
-Example_Store_Goodbye        $f8dcbd
-Example_Store_Main           $f8dc66
-Example_Store_Sell           $f8dfb3
-Example_Store_Sell_Nothing   $f8e0e5
-Example_Store_Sell_What      $f8dfdd
-Example_Store_Sell_Yes       $f8e0a9
-l_Example_Store_Full         $f8df08
+Example_Store                $f8dc13
+Example_Store_Again          $f8df5e
+Example_Store_Another        $f8dd5b
+Example_Store_Broke          $f8debc
+Example_Store_Buy            $f8dce0
+Example_Store_Buy_Cancel     $f8dea3
+Example_Store_Buy_Continue   $f8dd67
+Example_Store_Buy_Party      $f8de76
+Example_Store_Buy_User_Full  $f8ddf9
+Example_Store_Cant_Equip     $f8dd8c
+Example_Store_Cant_Sell      $f8e0c3
+Example_Store_Goodbye        $f8dcc1
+Example_Store_Main           $f8dc6a
+Example_Store_Sell           $f8dfb7
+Example_Store_Sell_Nothing   $f8e0e9
+Example_Store_Sell_What      $f8dfe1
+Example_Store_Sell_Yes       $f8e0ad
+l_Example_Store_Full         $f8df0c
 -----------------------------------------------------------------
 
 
 Labels in module hotel
 Name                         Address
 -----------------------------------------------------------------
-GeneralSleep                 $f8fc5b
-Nothing                      $f8fcb3
-exit                         $f8fcac
+GeneralSleep                 $f8fc5f
+Nothing                      $f8fcb7
+exit                         $f8fcb0
 -----------------------------------------------------------------
 
 
@@ -7683,8 +7683,8 @@ Name                         Address
 Labels in module meteor
 Name                         Address
 -----------------------------------------------------------------
-teleportation                $f8f4a9
-unsetflag                    $f8f6fe
+teleportation                $f8f4ad
+unsetflag                    $f8f702
 -----------------------------------------------------------------
 
 
@@ -7711,11 +7711,11 @@ sign2                        $f8ade5
 Labels in module pkboundcity
 Name                         Address
 -----------------------------------------------------------------
-npc_141                      $f8f12d
-npc_626                      $f8f3d7
-npc_634                      $f8f419
-npc_637                      $f8f1ac
-npc_639                      $f8f281
+npc_141                      $f8f131
+npc_626                      $f8f3db
+npc_634                      $f8f41d
+npc_637                      $f8f1b0
+npc_639                      $f8f285
 -----------------------------------------------------------------
 
 
@@ -7728,7 +7728,7 @@ Name                         Address
 Labels in module tendabank
 Name                         Address
 -----------------------------------------------------------------
-tendabank                    $f8f702
+tendabank                    $f8f706
 -----------------------------------------------------------------
 
 
@@ -7763,28 +7763,28 @@ tom                          $f8ce07
 Labels in module thoughts
 Name                         Address
 -----------------------------------------------------------------
-check                        $f8fa0d
-shave                        $f8fa45
-shave2                       $f8fad8
+check                        $f8fa11
+shave                        $f8fa49
+shave2                       $f8fadc
 -----------------------------------------------------------------
 
 
 Labels in module tiltontenda
 Name                         Address
 -----------------------------------------------------------------
-sorry                        $f8ece9
-tilton                       $f8e968
+sorry                        $f8eced
+tilton                       $f8e96c
 -----------------------------------------------------------------
 
 
 Labels in module twoson
 Name                         Address
 -----------------------------------------------------------------
-hotelTwoson                  $f8f8a3
-hotelTwoson_goodMorning      $f8f9da
-hotelTwoson_greeting         $f8f92b
-hotelTwoson_noMoney          $f8f988
-hotelTwoson_refuse           $f8f9aa
+hotelTwoson                  $f8f8a7
+hotelTwoson_goodMorning      $f8f9de
+hotelTwoson_greeting         $f8f92f
+hotelTwoson_noMoney          $f8f98c
+hotelTwoson_refuse           $f8f9ae
 -----------------------------------------------------------------
 
 

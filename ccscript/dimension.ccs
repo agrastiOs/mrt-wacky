@@ -102,6 +102,7 @@ help(211)
 "@{itemname(211)}s usually have lots of goods inside them." end
 
 phone:
+music(04)
 "@Beep, beep!" next
 goto(data_31.l_0xc75909)
 eob
